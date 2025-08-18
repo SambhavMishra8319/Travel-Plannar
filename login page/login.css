@@ -1,5 +1,5 @@
 body {
-  background-image: url(assests/background_login.jpg);
+  background-image: url(../Asset/background_login.jpg);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -7,6 +7,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+img {
+    width: 120px;
+    height: auto;
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 
 .titlediv {
