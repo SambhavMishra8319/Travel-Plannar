@@ -1,0 +1,54 @@
+body {
+  background-image: url(assests/background_login.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.titlediv {
+  margin-top: 50px;
+  display: flex;
+  width: 40px;
+  justify-content: center;
+}
+
+.title {
+  text-align: center;
+  font-family: "Playfair Display SC", serif;
+  font-weight: 700;
+  font-style: normal;
+  color: white;
+  line-height: 75%;
+  letter-spacing: 1px;
+  font-size: 80px;
+}
+
+.logform {
+  margin-top: 80px;
+  width: 300px;
+}
+
+.input-container {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-container i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: gray;
+}
+
+.input-container input {
+  width: 100%;
+  padding: 12px 12px 12px 40px; /* extra left padding for icon */
+  border-radius: 30px;
+  border: 1px solid whitesmoke;
+  font-size: 16px;
+}
