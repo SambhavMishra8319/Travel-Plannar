@@ -62,10 +62,16 @@ img {
   
 }
 .input-container i img {
-  top:-12px;
+  top:-1px;
   width: -100px;
   height: 20px;
-  left: -50px;
-  right: 0px;
+  left: -110px;
+  right: 10px;
   object-fit: contain;
+}
+img{
+     height: auto;
+     width: 250px;
+     margin-top: -10px;
+     margin-right: -60px;
 }
