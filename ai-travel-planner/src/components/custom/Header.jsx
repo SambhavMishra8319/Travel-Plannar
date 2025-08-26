@@ -83,9 +83,9 @@ function Header() {
     <div className="relative p-3 shadow-sm flex items-center px-5">
       <img src="/main_logo.png" alt="Logo" className="w-25 h-20 object-contain" />
     
-      <div className="absolute right-0 flex items-center gap-3"> {/* ✅ Ensured proper alignment */}
+      <div className="absolute right-0 flex items-center gap-2"> {/* ✅ Ensured proper alignment */}
         {user ? (
-          <div className="flex items-center gap-5"> {/* ✅ Wrapped in flex for alignment */}
+          <div className="flex items-center gap-4"> {/* ✅ Wrapped in flex for alignment */}
             <a href='/create-trip'>
               <Button variant="outline" className="rounded-full bg-black text-white">+ Create Trip </Button>
             </a>
