@@ -16,12 +16,12 @@ function Hero() {
       <h1 className="text-center leading-tight tracking-tight">
         {/* Main Title */}
         <span className="block font-extrabold text-[44px] sm:text-[58px] md:text-[72px] text-transparent bg-clip-text bg-gradient-to-r from-[#2563eb] via-[#06b6d4] to-[#22c55e] drop-shadow-md">
-          Explore Endless Journeys 🌍
+          Explore Endless Journeys 
         </span>
 
         {/* Sub Title */}
         <span className="mt-3 block text-gray-700 dark:text-gray-100 font-medium text-xl md:text-2xl italic">
-          AI-Crafted Itineraries, Made Just for You ✨
+          AI-Crafted Itineraries, Made Just for You 
         </span>
       </h1>
 
@@ -43,7 +43,7 @@ function Hero() {
       {/* CTA Button */}
       <Link to={"/create-trip"}>
         <Button className="mt-6 bg-gradient-to-r from-[#2563eb] via-[#06b6d4] to-[#22c55e] text-white text-lg px-10 py-4 rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300">
-          Start Planning for Free 🚀
+          Start Planning for Free 
         </Button>
       </Link>
 
