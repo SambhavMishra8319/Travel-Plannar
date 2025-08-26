@@ -81,7 +81,7 @@ function Header() {
 
   return (
     <div className="relative p-3 shadow-sm flex items-center px-5">
-      <img src="/logo.svg" alt="Logo" />
+      <img src="/main_logo.png" alt="Logo" className="w-25 h-20 object-contain" />
       <div className="absolute right-0 flex items-center gap-3"> {/* ✅ Ensured proper alignment */}
         {user ? (
           <div className="flex items-center gap-5"> {/* ✅ Wrapped in flex for alignment */}
