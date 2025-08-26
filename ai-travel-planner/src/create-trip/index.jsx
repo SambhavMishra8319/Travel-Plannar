@@ -118,7 +118,7 @@ function CreateTrip() {
         transition={{ duration: 0.6 }}
       >
         <h2 className="font-extrabold text-4xl sm:text-5xl text-center text-gray-800">
-          Tell Us Your Travel Preferences 🏕✨
+          Tell Us Your Travel Preferences 
         </h2>
         <p className="mt-4 text-gray-600 text-lg text-center max-w-2xl mx-auto">
           Just provide some basic details and our AI-powered planner will create a{" "}
@@ -218,7 +218,7 @@ function CreateTrip() {
             {loading ? (
               <AiOutlineLoading3Quarters className="h-7 w-7 animate-spin" />
             ) : (
-              "✨ Generate My Trip"
+              "Generate My Trip"
             )}
           </Button>
         </div>
