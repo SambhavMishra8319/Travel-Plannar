@@ -52,7 +52,9 @@ function CreateTrip() {
     }
 
     if (!formData.noOfDays || !formData.location?.label || !formData.budget || !formData.travelWith) {
-      toast.error("⚠️ Please fill all the required details!");
+      toast.error("⚠️ Please fill all the required details!", {
+        theme: "colored",
+      });
       return;
     }
 
@@ -69,7 +71,7 @@ function CreateTrip() {
       setLoading(false);
     } catch (error) {
       console.error("Error in AI response:", error);
-      toast.error("Something went wrong. Try again.");
+      toast.error("Something went wrong. Try again.", { theme: "colored" });
       setLoading(false);
     }
   };
@@ -110,10 +112,10 @@ function CreateTrip() {
       {/* Background Image with Overlay */}
       <div
         className="absolute inset-0 -z-10 bg-cover bg-center"
-        style={{ backgroundImage: "url('/Intro-page.png.jpg')" }}
+        style={{ backgroundImage: "url('/bg.jpg')" }}
       >
         {/* Dark overlay for readability */}
-        <div className="absolute inset-0 bg-black/40"></div>
+        <div className="absolute inset-0 bg-black/70"></div>
       </div>
 
       <ToastContainer />
@@ -135,30 +137,55 @@ function CreateTrip() {
       </motion.div>
 
       {/* Form */}
-      <div className="mt-16 flex flex-col gap-12 text-black">
+      <div className="mt-16 flex flex-col gap-12 text-white">
         {/* Destination */}
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
-          <h2 className="text-xl font-medium mb-3">🌍 Destination</h2>
-          <GooglePlacesAutocomplete
-            apiKey={import.meta.env.VITE_GOOGLE_PLACE_API_KEY}
-            selectProps={{
-              value: place,
-              onChange: (v) => {
-                setPlace(v);
-                handleInputChange("location", v);
-              },
-              styles: {
-                control: (provided) => ({
-                  ...provided,
-                  borderRadius: "12px",
-                  padding: "6px",
-                  border: "1px solid #ddd",
-                  boxShadow: "none",
-                }),
-              },
-            }}
-          />
-        </motion.div>
+  <h2 className="text-xl font-medium mb-3 text-white">🌍 Destination</h2>
+  <GooglePlacesAutocomplete
+    apiKey={import.meta.env.VITE_GOOGLE_PLACE_API_KEY}
+    selectProps={{
+      value: place,
+      onChange: (v) => {
+        setPlace(v);
+        handleInputChange("location", v);
+      },
+      styles: {
+        control: (provided, state) => ({
+          ...provided,
+          borderRadius: "12px",
+          padding: "6px",
+          border: "1px solid #ffffff50",
+          boxShadow: "none",
+          backgroundColor: state.isFocused || state.hasValue ? "#ffffff" : "rgba(255,255,255,0.05)",
+        }),
+        input: (provided) => ({
+          ...provided,
+          color: "#000000", // black text while typing
+        }),
+        singleValue: (provided, state) => ({
+          ...provided,
+          color: state.hasValue ? "#000000" : "#fff", // black when value selected
+        }),
+        placeholder: (provided) => ({
+          ...provided,
+          color: "rgba(0,0,0,0.5)", // placeholder gray
+        }),
+        menu: (provided) => ({
+          ...provided,
+          backgroundColor: "#ffffff", // menu white
+          color: "#000000",           // menu text black
+        }),
+        option: (provided, state) => ({
+          ...provided,
+          backgroundColor: state.isFocused ? "#f0f0f0" : "#ffffff", // highlight option
+          color: "#000000",
+          cursor: "pointer",
+        }),
+      },
+    }}
+  />
+</motion.div>
+
 
         {/* Days */}
         <div>
@@ -166,7 +193,7 @@ function CreateTrip() {
           <input
             placeholder="Ex. 3"
             type="number"
-            className="border border-gray-300 p-3 rounded-lg w-full text-black focus:ring-2 focus:ring-blue-500 outline-none"
+            className="border border-white/30 p-3 rounded-lg w-full bg-black/20 text-white focus:ring-2 focus:ring-yellow-300 outline-none"
             onChange={(e) => handleInputChange("noOfDays", e.target.value)}
           />
         </div>
@@ -180,13 +207,13 @@ function CreateTrip() {
                 key={item.id}
                 className={`cursor-pointer p-6 rounded-xl border bg-white/10 backdrop-blur-md transition-all ${
                   formData?.budget === item.title
-                    ? "border-blue-400 shadow-lg scale-105"
-                    : "hover:shadow-md"
+                    ? "border-yellow-300 shadow-lg scale-105"
+                    : "hover:shadow-md border-white/30"
                 }`}
                 onClick={() => handleInputChange("budget", item.title)}
               >
-                <div className="text-4xl">{item.icon}</div>
-                <div className="mt-2 font-semibold text-lg">{item.title}</div>
+                <div className="text-4xl text-white">{item.icon}</div>
+                <div className="mt-2 font-semibold text-lg text-white">{item.title}</div>
                 <div className="text-sm text-gray-200">{item.desc}</div>
               </div>
             ))}
@@ -203,12 +230,12 @@ function CreateTrip() {
                 className={`cursor-pointer p-6 rounded-xl border bg-white/10 backdrop-blur-md transition-all ${
                   formData?.travelWith === item.title
                     ? "border-green-400 shadow-lg scale-105"
-                    : "hover:shadow-md"
+                    : "hover:shadow-md border-white/30"
                 }`}
                 onClick={() => handleInputChange("travelWith", item.title)}
               >
-                <div className="text-4xl">{item.icon}</div>
-                <div className="mt-2 font-semibold text-lg">{item.title}</div>
+                <div className="text-4xl text-white">{item.icon}</div>
+                <div className="mt-2 font-semibold text-lg text-white">{item.title}</div>
                 <div className="text-sm text-gray-200">{item.desc}</div>
               </div>
             ))}
@@ -218,30 +245,33 @@ function CreateTrip() {
         {/* Generate Button */}
         <div className="flex justify-center my-10">
           <Button
-  disabled={loading}
-  onClick={OnGenerateTrip}
-  className="px-8 py-3 bg-black text-white text-lg font-semibold rounded-full shadow-md hover:bg-white hover:text-black hover:scale-105 transition-all duration-300"
->
-  {loading ? (
-    <AiOutlineLoading3Quarters className="h-7 w-7 animate-spin" />
-  ) : (
-    "Generate My Trip"
-  )}
-</Button>
-
+            disabled={loading}
+            onClick={OnGenerateTrip}
+            className="px-8 py-3 bg-yellow-400 text-black text-lg font-semibold rounded-full shadow-md hover:bg-yellow-300 hover:text-black hover:scale-105 transition-all duration-300"
+          >
+            {loading ? (
+              <AiOutlineLoading3Quarters className="h-7 w-7 animate-spin text-black" />
+            ) : (
+              "Generate My Trip"
+            )}
+          </Button>
         </div>
       </div>
 
       {/* Login Dialog */}
       <Dialog open={openDialog} onOpenChange={setOpenDialog}>
-        <DialogContent className="max-w-sm w-full p-6 rounded-lg shadow-lg bg-white flex flex-col items-center text-center">
+        <DialogContent className="max-w-sm w-full p-6 rounded-lg shadow-lg bg-black/80 flex flex-col items-center text-center">
           <DialogHeader>
-            <h2 className="font-bold text-lg">Sign In With Google</h2>
+            <h2 className="font-bold text-lg text-white">Sign In With Google</h2>
           </DialogHeader>
-          <DialogDescription className="text-gray-600 text-sm mt-2">
+          <DialogDescription className="text-gray-200 text-sm mt-2">
             Sign in to securely access AI-powered trip planning.
           </DialogDescription>
-          <Button onClick={login} variant="outline" className="mt-4 w-full flex gap-4 items-center">
+          <Button
+            onClick={login}
+            variant="outline"
+            className="mt-4 w-full flex gap-4 items-center border-white text-white hover:bg-yellow-400 hover:text-black"
+          >
             <FcGoogle className="h-7 w-7" /> Continue with Google
           </Button>
         </DialogContent>
