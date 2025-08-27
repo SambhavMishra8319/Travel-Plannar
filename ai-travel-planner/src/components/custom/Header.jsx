@@ -50,7 +50,7 @@ function Header() {
       <a href="/" className="flex items-center gap-3">
         <div className="w-32 h-12 flex items-center">
           <img
-            src="/main_logo.png"
+            src="/logo_2.png"
             alt="Logo"
             className="max-h-full object-contain"
           />

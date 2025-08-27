@@ -107,8 +107,15 @@ function CreateTrip() {
 
   return (
     <div className="relative min-h-screen w-full px-6 sm:px-10 md:px-32 lg:px-56 py-10">
-      {/* Background */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-blue-50 via-white to-green-50"></div>
+      {/* Background Image with Overlay */}
+      <div
+        className="absolute inset-0 -z-10 bg-cover bg-center"
+        style={{ backgroundImage: "url('/Intro-page.png.jpg')" }}
+      >
+        {/* Dark overlay for readability */}
+        <div className="absolute inset-0 bg-black/40"></div>
+      </div>
+
       <ToastContainer />
 
       {/* Header */}
@@ -117,18 +124,18 @@ function CreateTrip() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
       >
-        <h2 className="font-extrabold text-4xl sm:text-5xl text-center text-gray-800">
+        <h2 className="font-extrabold text-4xl sm:text-5xl text-center text-white drop-shadow-lg">
           Tell Us Your Travel Preferences 
         </h2>
-        <p className="mt-4 text-gray-600 text-lg text-center max-w-2xl mx-auto">
+        <p className="mt-4 text-gray-200 text-lg text-center max-w-2xl mx-auto drop-shadow">
           Just provide some basic details and our AI-powered planner will create a{" "}
-          <span className="font-semibold text-blue-600">custom itinerary</span> 
+          <span className="font-semibold text-yellow-300">custom itinerary</span> 
           tailored just for you.
         </p>
       </motion.div>
 
       {/* Form */}
-      <div className="mt-16 flex flex-col gap-12">
+      <div className="mt-16 flex flex-col gap-12 text-black">
         {/* Destination */}
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }}>
           <h2 className="text-xl font-medium mb-3">🌍 Destination</h2>
@@ -159,7 +166,7 @@ function CreateTrip() {
           <input
             placeholder="Ex. 3"
             type="number"
-            className="border border-gray-300 p-3 rounded-lg w-full focus:ring-2 focus:ring-blue-500 outline-none"
+            className="border border-gray-300 p-3 rounded-lg w-full text-black focus:ring-2 focus:ring-blue-500 outline-none"
             onChange={(e) => handleInputChange("noOfDays", e.target.value)}
           />
         </div>
@@ -171,16 +178,16 @@ function CreateTrip() {
             {SelectBudgetOptions.map((item) => (
               <div
                 key={item.id}
-                className={`cursor-pointer p-6 rounded-xl border transition-all ${
+                className={`cursor-pointer p-6 rounded-xl border bg-white/10 backdrop-blur-md transition-all ${
                   formData?.budget === item.title
-                    ? "border-blue-600 shadow-lg scale-105"
+                    ? "border-blue-400 shadow-lg scale-105"
                     : "hover:shadow-md"
                 }`}
                 onClick={() => handleInputChange("budget", item.title)}
               >
                 <div className="text-4xl">{item.icon}</div>
                 <div className="mt-2 font-semibold text-lg">{item.title}</div>
-                <div className="text-sm text-gray-500">{item.desc}</div>
+                <div className="text-sm text-gray-200">{item.desc}</div>
               </div>
             ))}
           </div>
@@ -193,16 +200,16 @@ function CreateTrip() {
             {SelectTravelsList.map((item) => (
               <div
                 key={item.id}
-                className={`cursor-pointer p-6 rounded-xl border transition-all ${
+                className={`cursor-pointer p-6 rounded-xl border bg-white/10 backdrop-blur-md transition-all ${
                   formData?.travelWith === item.title
-                    ? "border-green-600 shadow-lg scale-105"
+                    ? "border-green-400 shadow-lg scale-105"
                     : "hover:shadow-md"
                 }`}
                 onClick={() => handleInputChange("travelWith", item.title)}
               >
                 <div className="text-4xl">{item.icon}</div>
                 <div className="mt-2 font-semibold text-lg">{item.title}</div>
-                <div className="text-sm text-gray-500">{item.desc}</div>
+                <div className="text-sm text-gray-200">{item.desc}</div>
               </div>
             ))}
           </div>
@@ -211,16 +218,17 @@ function CreateTrip() {
         {/* Generate Button */}
         <div className="flex justify-center my-10">
           <Button
-            disabled={loading}
-            onClick={OnGenerateTrip}
-            className="px-8 py-3 bg-gradient-to-r from-blue-600 to-green-500 text-white text-lg font-semibold rounded-full shadow-md hover:scale-105 transition-transform"
-          >
-            {loading ? (
-              <AiOutlineLoading3Quarters className="h-7 w-7 animate-spin" />
-            ) : (
-              "Generate My Trip"
-            )}
-          </Button>
+  disabled={loading}
+  onClick={OnGenerateTrip}
+  className="px-8 py-3 bg-black text-white text-lg font-semibold rounded-full shadow-md hover:bg-white hover:text-black hover:scale-105 transition-all duration-300"
+>
+  {loading ? (
+    <AiOutlineLoading3Quarters className="h-7 w-7 animate-spin" />
+  ) : (
+    "Generate My Trip"
+  )}
+</Button>
+
         </div>
       </div>
 
