@@ -196,21 +196,22 @@ function Hero() {
 
   <div className="grid md:grid-cols-3 gap-12 max-w-7xl mx-auto">
     {[
-      {
-        name: "Ananya Sharma",
-        text: "The AI Travel Planner made my trip to Paris seamless! It saved me hours of planning.",
-        img: "user1.jpg",
-      },
-      {
-        name: "Rahul Mehta",
-        text: "I traveled to Ladakh with friends — the itinerary was on point! Best group trip ever.",
-        img: "user2.jpg",
-      },
-      {
-        name: "Emily Johnson",
-        text: "Loved how it customized everything based on my budget. Highly recommended!",
-        img: "user3.jpg",
-      },
+     {
+  name: "Jitesh Kumar Keshari",
+  text: "The AI Travel Planner made my trip to Jaipur so easy! It covered forts, palaces, and local food perfectly.",
+  img: "url('/Jitesh_kumar.jpg')",
+},
+{
+  name: "Himanshu Kumar",
+  text: "I went to Manali with friends — the itinerary suggested the best adventure spots. Unforgettable trip!",
+  img: "url('/Himanshu_Kumar.jpg')",
+},
+{
+  name: "Pritesh Kumar Rawat",
+  text: "Planned a family vacation to Kerala. The houseboat stay and backwater tour were right on budget!",
+  img: "user3.jpg",
+},
+
     ].map((review, idx) => (
       <div
         key={idx}
@@ -231,72 +232,89 @@ function Hero() {
 </section>
 
 {/* ✨ Newsletter Section */}
-<section className="py-20 bg-gradient-to-r from-blue-600 to-green-500 text-white text-center relative overflow-hidden">
+<section className="w-full mx-auto py-20 bg-gradient-to-r from-blue-600 to-green-500 text-white text-center relative overflow-hidden rounded-2xl shadow-lg">
   <div className="absolute inset-0 bg-pattern opacity-10"></div>
-  <h2 className="text-4xl font-extrabold mb-4 drop-shadow-lg">Join Our Travel Community </h2>
-  <p className="mb-8 text-lg opacity-90">
-    Get exclusive travel tips, destination guides, and AI-powered offers.
-  </p>
-  <form className="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-2xl mx-auto">
-    <input
-      type="email"
-      placeholder="Enter your email"
-      className="px-5 py-4 rounded-lg text-gray-800 w-full sm:w-2/3 shadow-md focus:ring-4 focus:ring-green-300 outline-none"
-    />
-    <button className="bg-black hover:bg-gray-900 px-8 py-4 rounded-lg font-semibold shadow-lg hover:scale-105 transform transition">
-      Subscribe 
-    </button>
-  </form>
-</section>
-
-{/* ✨ FAQ Section */}
-<section className="py-24 px-6 max-w-6xl mx-auto">
-  <h2 className="text-5xl font-extrabold text-center mb-16 text-gray-800">
-    Frequently Asked Questions ❓
-  </h2>
-  <div className="space-y-8">
-    {[
-      {
-        q: "Is the AI Travel Planner free to use?",
-        a: "Yes! You can start planning trips for free. We also offer premium features for advanced travelers.",
-      },
-      {
-        q: "Can I use it for international trips?",
-        a: "Absolutely! It supports both domestic and international destinations worldwide.",
-      },
-      {
-        q: "Can I share trips with friends?",
-        a: "Yes! You can invite friends and plan together seamlessly.",
-      },
-    ].map((faq, idx) => (
-      <div
-        key={idx}
-        className="p-8 bg-white rounded-2xl shadow-md hover:shadow-xl transform hover:-translate-y-1 transition duration-400"
-      >
-        <h3 className="font-semibold text-2xl mb-3 text-indigo-700 flex items-center gap-2">
-          <span className="text-green-500">✔</span> {faq.q}
-        </h3>
-        <p className="text-gray-600 leading-relaxed">{faq.a}</p>
-      </div>
-    ))}
+  <div className="relative z-10 max-w-4xl mx-auto px-6">
+    <h2 className="text-5xl font-extrabold mb-6 drop-shadow-lg">
+      Join Our Travel Community 🌍
+    </h2>
+    <p className="mb-10 text-xl opacity-90">
+      Get exclusive travel tips, destination guides, and AI-powered offers.
+    </p>
+    <form className="flex flex-col sm:flex-row justify-center items-center gap-5">
+      <input
+        type="email"
+        placeholder="Enter your email"
+        className="px-6 py-5 rounded-xl text-gray-800 w-full sm:w-2/3 shadow-md focus:ring-4 focus:ring-green-300 outline-none"
+      />
+      <button className="bg-black hover:bg-gray-900 px-10 py-5 rounded-xl font-semibold shadow-lg hover:scale-105 transform transition">
+        Subscribe
+      </button>
+    </form>
   </div>
 </section>
 
-{/* ✨ Final CTA Section */}
-<section className="py-24 bg-gradient-to-r from-indigo-700 to-blue-600 text-white text-center relative overflow-hidden">
-  <div className="absolute inset-0 bg-[url('/travel-pattern.png')] opacity-10"></div>
-  <h2 className="text-5xl font-bold mb-6 drop-shadow-lg">
-    Ready to Plan Your Dream Trip? 
-  </h2>
-  <p className="mb-10 text-lg opacity-90 max-w-2xl mx-auto">
-    Start your journey today with our AI-powered travel planner and explore the world stress-free.
-  </p>
-  <Link to="/create-trip">
-    <Button className="bg-black text-white text-lg px-12 py-5 rounded-full shadow-2xl hover:scale-110 hover:shadow-[0_0_25px_rgba(255,255,255,0.5)] transition duration-500">
-       Start Planning Now
-    </Button>
-  </Link>
+
+{/* ✨ FAQ Section */}
+<section className="w-full min-h-screen py-32 px-8 bg-white">
+  <div className="max-w-7xl mx-auto">
+    <h2 className="text-6xl font-extrabold text-center mb-24 text-gray-800 leading-tight">
+      Frequently Asked Questions ❓
+    </h2>
+    <div className="space-y-12">
+      {[
+        {
+          q: "Is the AI Travel Planner free to use?",
+          a: "Yes! You can start planning trips for free. We also offer premium features for advanced travelers.",
+        },
+        {
+          q: "Can I use it for international trips?",
+          a: "Absolutely! It supports both domestic and international destinations worldwide.",
+        },
+        {
+          q: "Can I share trips with friends?",
+          a: "Yes! You can invite friends and plan together seamlessly.",
+        },
+      ].map((faq, idx) => (
+        <div
+          key={idx}
+          className="p-12 bg-gray-50 rounded-3xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition duration-400"
+        >
+          <h3 className="font-semibold text-3xl mb-5 text-indigo-700 flex items-center gap-4">
+            <span className="text-green-500 text-3xl">✔</span> {faq.q}
+          </h3>
+          <p className="text-gray-600 leading-relaxed text-xl">{faq.a}</p>
+        </div>
+      ))}
+    </div>
+  </div>
 </section>
+
+
+{/* ✨ Final CTA Section */}
+<section className="relative w-full py-24 md:py-32 bg-gradient-to-r from-blue-50 to-indigo-100 text-gray-900 text-center overflow-hidden">
+  {/* Subtle Pattern Overlay */}
+  <div className="absolute inset-0 bg-[url('/travel-pattern.png')] opacity-5"></div>
+
+  {/* Content */}
+  <div className="relative z-10 px-6 max-w-4xl mx-auto flex flex-col items-center">
+    <h2 className="text-4xl md:text-6xl font-extrabold mb-8 leading-snug">
+      Ready to Plan Your <span className="text-indigo-600">Dream Trip?</span>
+    </h2>
+    <p className="mb-10 text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
+      Start your journey today with our <span className="font-semibold text-indigo-600">AI-powered travel planner</span> 
+      and explore the world stress-free. Whether it’s a weekend getaway or an international adventure, 
+      we’ve got you covered.
+    </p>
+    <Link to="/create-trip">
+      <Button className="bg-gradient-to-r from-indigo-600 to-blue-500 text-white text-lg md:text-xl px-10 py-4 rounded-full shadow-lg hover:scale-105 transition duration-300">
+        Start Planning Now
+      </Button>
+    </Link>
+  </div>
+</section>
+
+
 
 
 
