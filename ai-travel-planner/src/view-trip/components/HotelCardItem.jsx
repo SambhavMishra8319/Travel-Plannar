@@ -3,41 +3,41 @@ import { Link } from "react-router-dom";
 import { FaStar, FaMapMarkerAlt, FaTag } from "react-icons/fa";
 
 function HotelCardItem({ hotel }) {
-  const [photoUrl, setPhotoUrl] = useState();
+  const [photoUrl, setPhotoUrl] = useState(null);
 
   useEffect(() => {
-    hotel && GetPlacePhoto();
+    if (hotel?.hotelName) {
+      GetPlacePhoto();
+    }
   }, [hotel]);
 
   const GetPlacePhoto = async () => {
-    if (!hotel?.userSelection?.location?.label) {
-      console.warn("Location label is missing.");
-      return;
-    }
-
-    const data = {
-      textQuery: hotel.hotelName,
-    };
-
     try {
-      const resp = await GetPlaceDetails(data);
-      console.log("API Response:", resp);
+      // Step 1: Find hotel by name/address
+      const resp = await fetch(
+        `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${encodeURIComponent(
+          hotel.hotelName + " " + hotel.hotelAddress
+        )}&key=${import.meta.env.VITE_GOOGLE_PLACE_API_KEY}`
+      );
+      const data = await resp.json();
 
-      if (resp?.places?.length > 0) {
-        const place = resp.places[0];
-        const photoName = place?.photos?.[3]?.name;
+      if (data?.results?.length > 0) {
+        const place = data.results[0];
+        const photoRef = place?.photos?.[0]?.photo_reference;
 
-        if (photoName) {
-          const PhotoUrl = PHOTO_REF_URL.replace("{NAME}", photoName);
-          setPhotoUrl(PhotoUrl);
+        if (photoRef) {
+          // Step 2: Build photo URL
+          const url = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=800&photo_reference=${photoRef}&key=${import.meta.env.VITE_GOOGLE_PLACE_API_KEY}`;
+          setPhotoUrl(url);
         } else {
-          console.warn("Photo not found at index [3]");
+          setPhotoUrl("/placeholder.jpg");
         }
       } else {
-        console.warn("No places found in API response.");
+        setPhotoUrl("/placeholder.jpg");
       }
     } catch (error) {
-      console.error("API Error:", error.response?.data || error.message);
+      console.error("API Error:", error);
+      setPhotoUrl("/placeholder.jpg");
     }
   };
 
@@ -57,6 +57,7 @@ function HotelCardItem({ hotel }) {
             src={photoUrl || "/placeholder.jpg"}
             alt={hotel.hotelName}
             className="h-full w-full object-cover"
+            onError={(e) => (e.target.src = "/placeholder.jpg")}
           />
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
@@ -76,7 +77,7 @@ function HotelCardItem({ hotel }) {
             <FaMapMarkerAlt className="text-red-500" /> {hotel.hotelAddress}
           </p>
 
-          {/* Price & Rating */}
+          {/* Price & Button */}
           <div className="flex justify-between items-center mt-3">
             <p className="flex items-center gap-1 text-sm font-medium text-green-600">
               <FaTag /> {hotel.price?.range || "Price not available"}

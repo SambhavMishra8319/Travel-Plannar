@@ -1,70 +1,78 @@
-import React, { useState, useEffect } from 'react'; // ✅ Added missing imports
-import { FaMapLocationDot } from "react-icons/fa6";
-import { Link } from 'react-router-dom'; // ✅ Import Link correctly
-import { Button } from "@/components/ui/button"; // ✅ Import Button correctly (adjust path if needed)
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-function PlaceCardItem({ place }) {  // ✅ Destructure place correctly
-    const [photoUrl, setPhotoUrl] = useState(); // ✅ useState is now defined
+function PlaceCardItem({ place }) {
+  const [photoUrl, setPhotoUrl] = useState(null);
 
-    useEffect(() => {
-        place && GetPlacePhoto();
-    }, [place]);
+  useEffect(() => {
+    if (place?.placeName) {
+      GetPlacePhoto();
+    }
+  }, [place]);
 
-    const GetPlacePhoto = async () => {
-        if (!place?.userSelection?.location?.label) { // ✅ Fixed incorrect variable `trip` to `place`
-            console.warn("Location label is missing.");
-            return;
+  const GetPlacePhoto = async () => {
+    try {
+      // Step 1: Search for Place ID
+      const resp = await fetch(
+        `https://maps.googleapis.com/maps/api/place/textsearch/json?query=${encodeURIComponent(
+          place.placeName
+        )}&key=${import.meta.env.VITE_GOOGLE_PLACE_API_KEY}`
+      );
+      const data = await resp.json();
+
+      if (data?.results?.length > 0) {
+        const placeId = data.results[0].place_id;
+
+        // Step 2: Get Place Details with photos
+        const detailsResp = await fetch(
+          `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=photos&key=${import.meta.env.VITE_GOOGLE_PLACE_API_KEY}`
+        );
+        const detailsData = await detailsResp.json();
+
+        const photos = detailsData?.result?.photos;
+        if (photos?.length > 0) {
+          // Pick a random photo so it’s not always the same
+          const randomIndex = Math.floor(Math.random() * photos.length);
+          const photoRef = photos[randomIndex].photo_reference;
+
+          setPhotoUrl(
+            `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${photoRef}&key=${import.meta.env.VITE_GOOGLE_PLACE_API_KEY}`
+          );
+        } else {
+          setPhotoUrl("/placeholder.jpg");
         }
+      } else {
+        setPhotoUrl("/placeholder.jpg");
+      }
+    } catch (error) {
+      console.error("API Error:", error);
+      setPhotoUrl("/placeholder.jpg");
+    }
+  };
 
-        const data = {
-            textQuery: place.placeName
-        };
-
-        try {
-            const resp = await GetPlaceDetails(data);
-
-            if (resp?.places?.length > 0) {
-                const place = resp.places[0]; // Extract first place
-                const photoName = place?.photos?.[3]?.name; // Ensure index exists
-
-                if (photoName) {
-                    const photoUrl = PHOTO_REF_URL.replace('{NAME}', photoName); // ✅ Fixed incorrect capitalization `PhotoUrl`
-                    setPhotoUrl(photoUrl); // ✅ Fix setting photo URL correctly
-                } else {
-                    console.warn("Photo not found at index [3]");
-                    setPhotoUrl('/placeholder.jpg'); // ✅ Fallback to placeholder if no photo
-                }
-            } else {
-                console.warn("No places found in API response.");
-                setPhotoUrl('/placeholder.jpg'); // ✅ Fallback if no places found
-            }
-        } catch (error) {
-            console.error("API Error:", error.response?.data || error.message);
-            setPhotoUrl('/placeholder.jpg'); // ✅ Fallback in case of error
-        }
-    };
-
-    return (
-        <Link
-            to={`https://www.google.com/maps/search/?q=${encodeURIComponent(place.placeName)}`}
-            target='_blank'
-            className="no-underline text-black" // ✅ Ensures text is black and removes default link styling
-        >
-            <div className='border rounded-xl p-3 mt-2 flex gap-5 hover:scale-105 transition-all hover:shadow-md cursor-pointer'>
-                <img
-                    src={photoUrl || '/placeholder.jpg'} // ✅ Ensured placeholder works properly
-                    alt={place?.placeName || "Place Image"}  // ✅ Add alt for accessibility
-                    className='w-[130px] h-[130px] rounded-xl' // ✅ Fix className placement
-                    onError={(e) => e.target.src = '/placeholder.jpg'} // ✅ Ensures fallback if image fails
-                />
-                <div className="text-black"> {/* ✅ Ensure inner text is also black */}
-                    <h2 className='font-bold text-lg text-black'>{place.placeName}</h2>
-                    <p className='text-sm text-gray-500'>{place.placeDetails}</p>
-                    <h2 className='mt-2 text-black'>🕙 {place.travelTime}</h2>
-                </div>
-            </div>
-        </Link>
-    );
+  return (
+    <Link
+      to={`https://www.google.com/maps/search/?q=${encodeURIComponent(
+        place.placeName
+      )}`}
+      target="_blank"
+      className="no-underline text-black"
+    >
+      <div className="border rounded-xl p-3 mt-2 flex gap-5 hover:scale-105 transition-all hover:shadow-md cursor-pointer">
+        <img
+          src={photoUrl || "/placeholder.jpg"}
+          alt={place?.placeName || "Place Image"}
+          className="w-[130px] h-[130px] rounded-xl object-cover"
+          onError={(e) => (e.target.src = "/placeholder.jpg")}
+        />
+        <div className="text-black">
+          <h2 className="font-bold text-lg">{place.placeName}</h2>
+          <p className="text-sm text-gray-500">{place.placeDetails}</p>
+          <h2 className="mt-2">🕙 {place.travelTime}</h2>
+        </div>
+      </div>
+    </Link>
+  );
 }
 
 export default PlaceCardItem;
