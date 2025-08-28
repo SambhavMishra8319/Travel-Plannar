@@ -118,50 +118,65 @@ function Hero() {
           ))}
         </div>
       </section>
+{/* Explore Section */}
+<section className="py-20 bg-gradient-to-b from-gray-50 to-gray-100 px-6">
+  <h2 className="text-4xl font-extrabold text-center mb-6 text-gray-800">Explore Destinations</h2>
+  <p className="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+    Discover breathtaking places across the globe. From city skylines to tropical escapes — let AI curate your next adventure.
+  </p>
 
-      {/* Explore Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-gray-100 px-6">
-        <h2 className="text-4xl font-extrabold text-center mb-6 text-gray-800">Explore Destinations</h2>
-        <p className="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">
-          Discover breathtaking places across the globe. From city skylines to tropical escapes — let AI curate your next adventure.
-        </p>
+  <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+    {[
+      { img: "tajmahal.jpg", name: "Taj Mahal (Agra)", desc: "The symbol of eternal love, a UNESCO wonder.", link: "https://en.wikipedia.org/wiki/Taj_Mahal", map: "https://www.google.com/maps/place/agra" },
+      { img: "varanasi.jpg", name: "Varanasi", desc: "The spiritual heart of India on the banks of the Ganges.", link: "https://en.wikipedia.org/wiki/Varanasi", map: "https://www.google.com/maps/place/Varanasi" },
+      { img: "jaipur.jpg", name: "Jaipur", desc: "The Pink City known for forts, palaces, and vibrant bazaars.", link: "https://en.wikipedia.org/wiki/Jaipur", map: "https://www.google.com/maps/place/Jaipur" },
+      { img: "kerala.jpg", name: "Kerala", desc: "Backwaters, beaches, and serene houseboat escapes.", link: "https://en.wikipedia.org/wiki/Kerala", map: "https://www.google.com/maps/place/Kerala" },
+      { img: "ladakh.jpg", name: "Ladakh", desc: "Himalayan landscapes, monasteries, and adventure trails.", link: "https://en.wikipedia.org/wiki/Ladakh", map: "https://www.google.com/maps/place/Ladakh" },
+      { img: "goa.jpg", name: "Goa", desc: "Golden beaches, nightlife, and Portuguese heritage.", link: "https://en.wikipedia.org/wiki/Goa", map: "https://www.google.com/maps/place/Goa" },
+      { img: "paris.jpg", name: "Paris", desc: "The city of lights, romance, and timeless art.", link: "https://en.wikipedia.org/wiki/Paris", map: "https://www.google.com/maps/place/Paris" },
+      { img: "bali.jpg", name: "Bali", desc: "A tropical paradise with beaches & temples.", link: "https://en.wikipedia.org/wiki/Bali", map: "https://www.google.com/maps/place/Bali" },
+      { img: "newyork.jpg", name: "New York", desc: "The city that never sleeps — skyscrapers & culture.", link: "https://en.wikipedia.org/wiki/New_York_City", map: "https://www.google.com/maps/place/New+York" },
+      { img: "tokyo.jpg", name: "Tokyo", desc: "A futuristic city blending tradition & innovation.", link: "https://en.wikipedia.org/wiki/Tokyo", map: "https://www.google.com/maps/place/Tokyo" },
+      { img: "rome.jpg", name: "Rome", desc: "Ancient history, stunning architecture, and cuisine.", link: "https://en.wikipedia.org/wiki/Rome", map: "https://www.google.com/maps/place/Rome" },
+      { img: "sydney.jpg", name: "Sydney", desc: "Famous Opera House & beautiful coastal vibes.", link: "https://en.wikipedia.org/wiki/Sydney", map: "https://www.google.com/maps/place/Sydney" },
+      { img: "london.jpg", name: "London", desc: "A blend of royal heritage and modern living.", link: "https://en.wikipedia.org/wiki/London", map: "https://www.google.com/maps/place/London" },
+      { img: "maldives.jpg", name: "Maldives", desc: "Crystal-clear waters & luxury island escapes.", link: "https://en.wikipedia.org/wiki/Maldives", map: "https://www.google.com/maps/place/Maldives" },
+      { img: "dubai.jpg", name: "Dubai", desc: "Skyscrapers, shopping, and desert adventures.", link: "https://en.wikipedia.org/wiki/Dubai", map: "https://www.google.com/maps/place/Dubai" },
+      { img: "singapore.jpg", name: "Singapore", desc: "A futuristic hub with gardens, food, and culture.", link: "https://en.wikipedia.org/wiki/Singapore", map: "https://www.google.com/maps/place/Singapore" },
+    ].map((item, idx) => (
+      <div
+        key={idx}
+        className="relative overflow-hidden rounded-2xl shadow-lg group hover:shadow-2xl hover:scale-[1.03] transition duration-500"
+      >
+        {/* Map Button - Top Right */}
+        <a
+          href={item.map}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute top-2 right-2 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-md hover:shadow-lg transition-all duration-300 z-20"
+        >
+          View on Map
+        </a>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-          {[
-            { img: "tajmahal.jpg", name: "Taj Mahal (Agra)", desc: "The symbol of eternal love, a UNESCO wonder." },
-            { img: "varanasi.jpg", name: "Varanasi", desc: "The spiritual heart of India on the banks of the Ganges." },
-            { img: "jaipur.jpg", name: "Jaipur", desc: "The Pink City known for forts, palaces, and vibrant bazaars." },
-            { img: "kerala.jpg", name: "Kerala", desc: "Backwaters, beaches, and serene houseboat escapes." },
-            { img: "ladakh.jpg", name: "Ladakh", desc: "Himalayan landscapes, monasteries, and adventure trails." },
-            { img: "goa.jpg", name: "Goa", desc: "Golden beaches, nightlife, and Portuguese heritage." },
-            { img: "paris.jpg", name: "Paris", desc: "The city of lights, romance, and timeless art." },
-            { img: "bali.jpg", name: "Bali", desc: "A tropical paradise with beaches & temples." },
-            { img: "newyork.jpg", name: "New York", desc: "The city that never sleeps — skyscrapers & culture." },
-            { img: "tokyo.jpg", name: "Tokyo", desc: "A futuristic city blending tradition & innovation." },
-            { img: "rome.jpg", name: "Rome", desc: "Ancient history, stunning architecture, and cuisine." },
-            { img: "sydney.jpg", name: "Sydney", desc: "Famous Opera House & beautiful coastal vibes." },
-            { img: "london.jpg", name: "London", desc: "A blend of royal heritage and modern living." },
-            { img: "maldives.jpg", name: "Maldives", desc: "Crystal-clear waters & luxury island escapes." },
-            { img: "dubai.jpg", name: "Dubai", desc: "Skyscrapers, shopping, and desert adventures." },
-            { img: "singapore.jpg", name: "Singapore", desc: "A futuristic hub with gardens, food, and culture." },
-          ].map((item, idx) => (
-            <div
-              key={idx}
-              className="relative overflow-hidden rounded-2xl shadow-lg group hover:shadow-2xl hover:scale-[1.03] transition duration-500"
-            >
-              <img
-                src={`/${item.img}`}
-                alt={item.name}
-                className="w-full h-64 object-cover group-hover:brightness-90 transition"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex flex-col justify-end p-4">
-                <h3 className="text-white font-bold text-lg">{item.name}</h3>
-                <p className="text-gray-200 text-sm">{item.desc}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+        {/* Whole card links to Wikipedia */}
+        <a href={item.link} target="_blank" rel="noopener noreferrer" className="block">
+          <img
+            src={`/${item.img}`}
+            alt={item.name}
+            className="w-full h-64 object-cover group-hover:brightness-90 transition"
+          />
+
+          {/* Overlay (info) */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex flex-col justify-end p-4 pointer-events-none">
+            <h3 className="text-white font-bold text-lg">{item.name}</h3>
+            <p className="text-gray-200 text-sm">{item.desc}</p>
+          </div>
+        </a>
+      </div>
+    ))}
+  </div>
+</section>
+
 
       {/* Testimonials */}
      <section className="py-16 bg-gradient-to-br from-indigo-50 via-blue-50 to-indigo-100 px-6 relative overflow-hidden">

@@ -41,10 +41,8 @@ function Header() {
   };
 
   return (
- <header className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 md:py-5 
+    <header className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 md:py-5 
     bg-slate-600 text-white shadow-md">
-
-
 
       {/* Logo */}
       <a href="/" className="flex items-center gap-3">
@@ -59,40 +57,20 @@ function Header() {
 
       {/* Desktop Menu */}
       <nav className="hidden md:flex items-center gap-8 font-medium">
-      <a
-  href="/"
-  className="text-white hover:text-gray-300 transition-colors"
->
-  Home
-</a>
-<a
-  href="/about"
-  className="text-white hover:text-gray-300 transition-colors"
->
-  About Us
-</a>
-<a
-  href="/contact"
-  className="text-white hover:text-gray-300 transition-colors"
->
-  Contact Us
-</a>
-<a
-  href="/features"
-  className="text-white hover:text-gray-300 transition-colors"
->
-  Features
-</a>
+        <a href="/" className="text-white hover:text-gray-300 transition-colors">Home</a>
+        <a href="/about" className="text-white hover:text-gray-300 transition-colors">About Us</a>
+        <a href="/contact" className="text-white hover:text-gray-300 transition-colors">Contact Us</a>
+        <a href="/features" className="text-white hover:text-gray-300 transition-colors">Features</a>
 
         {user ? (
           <div className="flex items-center gap-4 ml-6">
             <a href="/create-trip">
-              <Button className="rounded-full bg-white text-black px-5 py-2 shadow hover:bg-gray-200 transition">
+              <Button className="rounded-full bg-black text-white px-5 py-2 shadow hover:bg-gray-800 transition">
                 + Create Trip
               </Button>
             </a>
             <a href="/my-trips">
-              <Button className="rounded-full bg-white text-black px-5 py-2 shadow hover:bg-gray-200 transition">
+              <Button className="rounded-full bg-black text-white px-5 py-2 shadow hover:bg-gray-800 transition">
                 My Trips
               </Button>
             </a>
@@ -125,7 +103,7 @@ function Header() {
         ) : (
           <Button
             onClick={() => setOpenDialog(true)}
-            className="rounded-full bg-white text-black px-6 py-2 shadow hover:bg-gray-200 transition"
+            className="rounded-full bg-blue-600 text-white px-6 py-2 shadow hover:bg-blue-700 transition"
           >
             Sign In
           </Button>
@@ -146,25 +124,20 @@ function Header() {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="absolute top-full left-0 w-full bg-black text-white shadow-md flex flex-col gap-4 px-6 py-5 md:hidden border-t border-gray-800">
-          <a href="/about" className="hover:text-gray-300 transition">
-            About Us
-          </a>
-          <a href="/contact" className="hover:text-gray-300 transition">
-            Contact Us
-          </a>
-          <a href="/features" className="hover:text-gray-300 transition">
-            Features
-          </a>
+          <a href="/" className="hover:text-gray-300 transition">Home</a>
+          <a href="/about" className="hover:text-gray-300 transition">About Us</a>
+          <a href="/contact" className="hover:text-gray-300 transition">Contact Us</a>
+          <a href="/features" className="hover:text-gray-300 transition">Features</a>
 
           {user ? (
             <>
               <a href="/create-trip">
-                <Button className="w-full rounded-full bg-white text-black px-5 py-2 shadow hover:bg-gray-200 transition">
+                <Button className="w-full rounded-full bg-black text-white px-5 py-2 shadow hover:bg-gray-800 transition">
                   + Create Trip
                 </Button>
               </a>
               <a href="/my-trips">
-                <Button className="w-full rounded-full bg-white text-black px-5 py-2 shadow hover:bg-gray-200 transition">
+                <Button className="w-full rounded-full bg-black text-white px-5 py-2 shadow hover:bg-gray-800 transition">
                   My Trips
                 </Button>
               </a>
@@ -185,7 +158,7 @@ function Header() {
                 setOpenDialog(true);
                 setMenuOpen(false);
               }}
-              className="w-full rounded-full bg-white text-black px-6 py-2 shadow hover:bg-gray-200 transition"
+              className="w-full rounded-full bg-blue-600 text-white px-6 py-2 shadow hover:bg-blue-700 transition"
             >
               Sign In
             </Button>
@@ -204,7 +177,7 @@ function Header() {
           </DialogDescription>
           <Button
             onClick={login}
-            className="mt-4 w-full flex gap-3 items-center justify-center bg-black text-white px-4 py-2 rounded-full hover:bg-gray-800 transition shadow"
+            className="mt-4 w-full flex gap-3 items-center justify-center bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition shadow"
           >
             <FcGoogle className="h-6 w-6" /> Sign In With Google
           </Button>
