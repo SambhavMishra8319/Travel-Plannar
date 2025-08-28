@@ -179,7 +179,7 @@ function Hero() {
 
 
       {/* Testimonials */}
-     <section className="py-16 bg-gradient-to-br from-indigo-50 via-blue-50 to-indigo-100 px-6 relative overflow-hidden">
+   <section className="py-16 bg-gradient-to-br from-indigo-50 via-blue-50 to-indigo-100 px-6 relative overflow-hidden">
   <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-12 text-gray-800 drop-shadow-sm">
     What Our Travelers Say
   </h2>
@@ -189,13 +189,24 @@ function Hero() {
       { name: "Jitesh Keshari", text: "The AI Travel Planner made my trip to Jaipur so easy! It covered forts, palaces, and local food perfectly.", img: "/Jitesh_kumar.jpg" },
       { name: "Himanshu Kumar", text: "I went to Manali with friends — the itinerary suggested the best adventure spots. Unforgettable trip!", img: "/Himanshu_Kumar.jpg" },
       { name: "Shreedhar K B", text: "Planned a family vacation to Kerala. The houseboat stay and backwater tour were right on budget!", img: "/Shreedhar.jpg" },
-      { name: "Anjali Sharma", text: "Paris was magical! The AI itinerary saved us hours of planning.", img: "/Anjali.jpg" },
-      { name: "Rohit Verma", text: "Bali trip was perfect. Beaches, temples, everything in one plan.", img: "/Rohit.jpg" },
+      { name: "Bikaram Hawaldar", text: "Paris was magical! The AI itinerary saved us hours of planning.", img: "/Bikaram.jpg" },
+      { name: "Deepak Kumar", text: "Bali trip was perfect. Beaches, temples, everything in one plan.", img: "/Deepak.jpg" },
       { name: "Sneha Gupta", text: "Our Dubai adventure was seamless thanks to the AI Travel Planner!", img: "/Sneha.jpg" },
       { name: "Aditya Singh", text: "Tokyo's itinerary was spot-on and super detailed!", img: "/Aditya.jpg" },
-      { name: "Priya Reddy", text: "The planner made our Rome trip stress-free. Highly recommend!", img: "/Priya.jpg" },
-      { name: "Karan Mehta", text: "Exploring London with AI’s help made everything so easy and organized!", img: "/Karan.jpg" },
-      { name: "Sanya Kapoor", text: "Maldives vacation was dreamy. Loved the hotel and water activities recommendations!", img: "/Sanya.jpg" },
+      { name: "Pritesh Kumar Rawat", text: "The planner made our Rome trip stress-free. Highly recommend!", img: "/Pritesh.jpg" },
+      { name: "Sagar Prajapati", text: "Exploring London with AI’s help made everything so easy and organized!", img: "/Sagar.jpg" },
+      { name: "Sujit Kumar", text: "Maldives vacation was dreamy. Loved the hotel and water activities recommendations!", img: "/Sujit.jpg" },
+      { name: "Ananya Sharma", text: "Singapore was so smooth with this planner. Loved the Sentosa Island and Marina Bay recommendations!", img: "/Ananya.jpg" },
+      { name: "Rohit Verma", text: "New York trip was amazing! AI suggested hidden gems beyond the usual Times Square.", img: "/Rohit.jpg" },
+      // 👇 Extra placeholders for more travelers (you can fill these later)
+      { name: "Traveler 13", text: "Amazing experience with this AI planner!", img: "/Traveler13.jpg" },
+      { name: "Traveler 14", text: "Loved the itinerary suggestions, super easy to follow.", img: "/Traveler14.jpg" },
+      { name: "Traveler 15", text: "Perfect trip planning experience!", img: "/Traveler15.jpg" },
+      { name: "Traveler 16", text: "Great recommendations for food and stays.", img: "/Traveler16.jpg" },
+      { name: "Traveler 17", text: "Superb AI planner, very helpful for my journey.", img: "/Traveler17.jpg" },
+      { name: "Traveler 18", text: "Everything was so organized and stress-free.", img: "/Traveler18.jpg" },
+      { name: "Traveler 19", text: "Found hidden gems I would have missed otherwise!", img: "/Traveler19.jpg" },
+      { name: "Traveler 20", text: "Best travel tool I’ve ever used!", img: "/Traveler20.jpg" },
     ].map((review, idx) => (
       <div
         key={idx}
