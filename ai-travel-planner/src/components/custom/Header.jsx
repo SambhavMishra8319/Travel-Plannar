@@ -41,7 +41,7 @@ function Header() {
   };
 
   return (
-    <header  className="sticky top-0 z-50 flex  items-center justify-between px-6 py-4 md:py-5 
+    <header  className="sticky top-0 z-60 flex h-16 items-center justify-between px-4 py-2 md:py-4 
     bg-gradient-to-br from-green-400 to-blue-400 text-white shadow-md">
 
       {/* Logo */}
