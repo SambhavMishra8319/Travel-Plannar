@@ -41,8 +41,8 @@ function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 md:py-5 
-    bg-slate-600 text-white shadow-md">
+    <header  className="sticky top-0 z-50 flex  items-center justify-between px-6 py-4 md:py-5 
+    bg-gradient-to-br from-green-400 to-blue-400 text-white shadow-md">
 
       {/* Logo */}
       <a href="/" className="flex items-center gap-3">
@@ -51,6 +51,7 @@ function Header() {
             src="/logo_2.png"
             alt="Logo"
             className="max-h-full object-contain"
+            
           />
         </div>
       </a>
