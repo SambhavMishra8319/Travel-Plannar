@@ -192,21 +192,17 @@ function Hero() {
       { name: "Barsha bhakta", text: "Agra was magical! The AI itinerary saved us hours of planning.", img: "/barsha.jpg" },
       { name: "Deepak Kumar", text: "Bali trip was perfect. Beaches, temples, everything in one plan.", img: "/Deepak.jpg" },
       { name: "Tejas", text: "Our Dubai adventure was seamless thanks to the AI Travel Planner!", img: "/tejas.jpg" },
-      { name: "Bikaram Hawaldar", text: "Tokyo's itinerary was spot-on and super detailed!", img: "/Bikaram.jpg" },
+      { name: "Sharmi", text: "Goa's itinerary was spot-on and super detailed!", img: "/sharmi.jpg" },
       { name: "Pritesh Kumar Rawat", text: "The planner made our Rome trip stress-free. Highly recommend!", img: "/Pritesh.jpg" },
-      { name: "Sagar Prajapati", text: "Exploring London with AI’s help made everything so easy and organized!", img: "/Sagar.jpg" },
+      { name: "Bikaram Hawaldar", text: "Exploring London with AI’s help made everything so easy and organized!", img: "/Bikaram.jpg" },
       { name: "Sujit Kumar", text: "Maldives vacation was dreamy. Loved the hotel and water activities recommendations!", img: "/Sujit.jpg" },
-      { name: "Anish Tiwari", text: "Singapore was so smooth with this planner. Loved the Sentosa Island and Marina Bay recommendations!", img: "/anish.jpg" },
+      { name: "Ansh Tiwari", text: "Singapore was so smooth with this planner. Loved the Sentosa Island and Marina Bay recommendations!", img: "/anish.jpg" },
       { name: "Sunil", text: "New York trip was amazing! AI suggested hidden gems beyond the usual Times Square.", img: "/sunil.jpg" },
       // 👇 Extra placeholders for more travelers (you can fill these later)
-      { name: "Traveler 13", text: "Amazing experience with this AI planner!", img: "/Traveler13.jpg" },
-      { name: "Traveler 14", text: "Loved the itinerary suggestions, super easy to follow.", img: "/Traveler14.jpg" },
-      { name: "Traveler 15", text: "Perfect trip planning experience!", img: "/Traveler15.jpg" },
-      { name: "Traveler 16", text: "Great recommendations for food and stays.", img: "/Traveler16.jpg" },
-      { name: "Traveler 17", text: "Superb AI planner, very helpful for my journey.", img: "/Traveler17.jpg" },
-      { name: "Traveler 18", text: "Everything was so organized and stress-free.", img: "/Traveler18.jpg" },
-      { name: "Traveler 19", text: "Found hidden gems I would have missed otherwise!", img: "/Traveler19.jpg" },
-      { name: "Traveler 20", text: "Best travel tool I’ve ever used!", img: "/Traveler20.jpg" },
+      { name: "Sagar Prajapati", text: "Paris was unforgettable! From the Eiffel Tower to cozy cafés, the AI planned it all.", img: "/Sagar.jpg" },
+      { name: "Sadhugun Ram", text: "Reykjavik trip was incredible! From the Northern Lights to hot springs, the AI planner made it effortless.", img: "/sadhgun.jpg" },
+      { name: "Vibha Rishtha Grandhala", text: "Switzerland felt like a dream — the Alps and lakes were planned perfectly within budget", img: "/vibha.jpg" },
+      
     ].map((review, idx) => (
       <div
         key={idx}
@@ -255,7 +251,7 @@ function Hero() {
               { q: "Can I use it for international trips?", a: "Absolutely! It supports both domestic and international destinations worldwide." },
               { q: "Can I share trips with friends?", a: "Yes! You can invite friends and plan together seamlessly." },
             ].map((faq, idx) => (
-              <div key={idx} className="p-12 bg-gray-50 rounded-3xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition duration-400">
+              <div key={idx} className="p-12 bg-gray-10 rounded-3xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition duration-400">
                 <h3 className="font-semibold text-3xl mb-5 text-indigo-700 flex items-center gap-4">
                   <span className="text-green-500 text-3xl">✔</span> {faq.q}
                 </h3>
