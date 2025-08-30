@@ -257,28 +257,6 @@ function Hero() {
   </div>
 </section>
 
-
-      {/* FAQ */}
-      <section className="w-full min-h-screen py-32 px-8 bg-white">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-6xl font-extrabold text-center mb-24 text-gray-800 leading-tight">Frequently Asked Questions ❓</h2>
-          <div className="space-y-12">
-            {[
-              { q: "Is the AI Travel Planner free to use?", a: "Yes! You can start planning trips for free. We also offer premium features for advanced travelers." },
-              { q: "Can I use it for international trips?", a: "Absolutely! It supports both domestic and international destinations worldwide." },
-              { q: "Can I share trips with friends?", a: "Yes! You can invite friends and plan together seamlessly." },
-            ].map((faq, idx) => (
-              <div key={idx} className="p-12 bg-gray-10 rounded-3xl shadow-lg hover:shadow-2xl transform hover:-translate-y-1 transition duration-400">
-                <h3 className="font-semibold text-3xl mb-5 text-indigo-700 flex items-center gap-4">
-                  <span className="text-green-500 text-3xl">✔</span> {faq.q}
-                </h3>
-                <p className="text-gray-600 leading-relaxed text-xl">{faq.a}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Final CTA */}
       <section className="relative w-full py-24 md:py-32 bg-gradient-to-r from-blue-50 to-indigo-100 text-gray-900 text-center overflow-hidden">
         <div className="absolute inset-0 bg-[url('/travel-pattern.png')] opacity-5"></div>

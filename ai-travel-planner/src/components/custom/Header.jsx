@@ -44,9 +44,9 @@ function Header() {
     <header className="sticky top-0 z-50 flex h-16 items-center justify-between px-4 md:px-8 bg-gradient-to-br from-green-400 to-blue-400 text-white shadow-md">
       {/* Logo */}
       <a href="/" className="flex items-center gap-3">
-        <div className="w-32 h-12 flex items-center">
+        <div className="w-17 h-14  flex items-center">
           <img
-            src="/logo_2.png"
+            src="/logo-1.png"
             alt="Logo"
             className="max-h-full object-contain"
           />
@@ -82,7 +82,7 @@ function Header() {
               </PopoverTrigger>
               <PopoverContent className="w-44 p-4 bg-white text-black border border-gray-300 rounded-lg shadow-lg">
                 <p className="text-sm font-semibold mb-2">{user?.name}</p>
-                <hr className="my-2 border-gray-400" />
+                <hr className="my-2 border-gray-300" />
                 <button
                   className="text-red-600 font-semibold hover:text-red-800 w-full text-left"
                   onClick={() => {
@@ -175,6 +175,7 @@ function Header() {
         <DialogContent className="max-w-sm w-full p-6 rounded-lg shadow-lg bg-white flex flex-col items-center text-center border border-gray-300">
           <DialogHeader>
             <h2 className="font-bold text-lg text-black">Sign In With Google</h2>
+          
           </DialogHeader>
           <DialogDescription className="text-gray-600 text-sm mt-2">
             Sign in to the App with Google authentication securely
