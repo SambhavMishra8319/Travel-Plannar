@@ -41,9 +41,7 @@ function Header() {
   };
 
   return (
-    <header  className="sticky top-0 z-60 flex h-16 items-center justify-between px-4 py-2 md:py-4 
-    bg-gradient-to-br from-green-400 to-blue-400 text-white shadow-md">
-
+    <header className="sticky top-0 z-50 flex h-16 items-center justify-between px-4 md:px-8 bg-gradient-to-br from-green-400 to-blue-400 text-white shadow-md">
       {/* Logo */}
       <a href="/" className="flex items-center gap-3">
         <div className="w-32 h-12 flex items-center">
@@ -51,17 +49,16 @@ function Header() {
             src="/logo_2.png"
             alt="Logo"
             className="max-h-full object-contain"
-            
           />
         </div>
       </a>
 
-      {/* Desktop Menu */}
+      {/* Desktop Menu */} 
       <nav className="hidden md:flex items-center gap-8 font-medium">
-        <a href="/" className="text-white hover:text-gray-300 transition-colors">Home</a>
-        <a href="/about" className="text-white hover:text-gray-300 transition-colors">About Us</a>
-        <a href="/contact" className="text-white hover:text-gray-300 transition-colors">Contact Us</a>
-        <a href="/features" className="text-white hover:text-gray-300 transition-colors">Features</a>
+        <a href="/" className="hover:text-gray-200 transition">Home</a>
+        <a href="/about" className="hover:text-gray-200 transition">About Us</a>
+        <a href="/contact" className="hover:text-gray-200 transition">Contact Us</a>
+        <a href="/features" className="hover:text-gray-200 transition">Features</a>
 
         {user ? (
           <div className="flex items-center gap-4 ml-6">
@@ -84,9 +81,7 @@ function Header() {
                 />
               </PopoverTrigger>
               <PopoverContent className="w-44 p-4 bg-white text-black border border-gray-300 rounded-lg shadow-lg">
-                <p className="text-sm font-semibold mb-2">
-                  {user?.name}
-                </p>
+                <p className="text-sm font-semibold mb-2">{user?.name}</p>
                 <hr className="my-2 border-gray-400" />
                 <button
                   className="text-red-600 font-semibold hover:text-red-800 w-full text-left"
@@ -114,21 +109,29 @@ function Header() {
       {/* Mobile Hamburger */}
       <div className="md:hidden">
         <button onClick={() => setMenuOpen(!menuOpen)}>
-          {menuOpen ? (
-            <X size={28} className="text-white" />
-          ) : (
-            <Menu size={28} className="text-white" />
-          )}
+          {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
-      {menuOpen && (
-        <div className="absolute top-full left-0 w-full bg-black text-white shadow-md flex flex-col gap-4 px-6 py-5 md:hidden border-t border-gray-800">
-          <a href="/" className="hover:text-gray-300 transition">Home</a>
-          <a href="/about" className="hover:text-gray-300 transition">About Us</a>
-          <a href="/contact" className="hover:text-gray-300 transition">Contact Us</a>
-          <a href="/features" className="hover:text-gray-300 transition">Features</a>
+      {/* Mobile Menu (Slide-in Sidebar) */}
+      <div
+        className={`fixed top-0 right-0 h-full w-3/4 bg-black text-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 ${
+          menuOpen ? "translate-x-0" : "translate-x-full"
+        }`}
+      >
+        {/* Close Button */}
+        <div className="flex justify-end p-4">
+          <button onClick={() => setMenuOpen(false)}>
+            <X size={28} />
+          </button>
+        </div>
+
+        {/* Menu Links */}
+        <div className="flex flex-col gap-6 text-lg font-medium px-6">
+          <a href="/" className="hover:text-gray-300" onClick={() => setMenuOpen(false)}>Home</a>
+          <a href="/about" className="hover:text-gray-300" onClick={() => setMenuOpen(false)}>About Us</a>
+          <a href="/contact" className="hover:text-gray-300" onClick={() => setMenuOpen(false)}>Contact Us</a>
+          <a href="/features" className="hover:text-gray-300" onClick={() => setMenuOpen(false)}>Features</a>
 
           {user ? (
             <>
@@ -165,7 +168,7 @@ function Header() {
             </Button>
           )}
         </div>
-      )}
+      </div>
 
       {/* Google Sign-In Dialog */}
       <Dialog open={openDialog} onOpenChange={setOpenDialog}>

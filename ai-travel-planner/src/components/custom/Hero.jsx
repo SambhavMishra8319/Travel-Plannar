@@ -223,23 +223,40 @@ function Hero() {
 
 
       {/* Newsletter */}
-      <section className="w-full mx-auto py-20 bg-gradient-to-r from-blue-600 to-green-500 text-white text-center relative overflow-hidden rounded-2xl shadow-lg">
-        <div className="absolute inset-0 bg-pattern opacity-10"></div>
-        <div className="relative z-10 max-w-4xl mx-auto px-6">
-          <h2 className="text-5xl font-extrabold mb-6 drop-shadow-lg">Join Our Travel Community 🌍</h2>
-          <p className="mb-10 text-xl opacity-90">Get exclusive travel tips, destination guides, and AI-powered offers.</p>
-          <form className="flex flex-col sm:flex-row justify-center items-center gap-5">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="px-6 py-5 rounded-xl text-gray-800 w-full sm:w-2/3 shadow-md focus:ring-4 focus:ring-green-300 outline-none"
-            />
-            <button className="bg-black hover:bg-gray-900 px-10 py-5 rounded-xl font-semibold shadow-lg hover:scale-105 transform transition">
-              Subscribe
-            </button>
-          </form>
-        </div>
-      </section>
+      <section className="w-full mx-auto py-20 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white text-center relative overflow-hidden rounded-3xl shadow-2xl">
+  {/* Background Glow Effect */}
+  <div className="absolute -top-20 -left-20 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-pulse"></div>
+  <div className="absolute -bottom-20 -right-20 w-72 h-72 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-pulse"></div>
+
+  {/* Content */}
+  <div className="relative z-10 max-w-3xl mx-auto px-6">
+    <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 drop-shadow-lg leading-tight">
+       Join Our Global Travel Community
+    </h2>
+    <p className="mb-10 text-lg sm:text-xl opacity-95">
+      Be the first to get <span className="font-semibold">AI-powered itineraries</span>, 
+      exclusive <span className="font-semibold">travel hacks</span>, and connect with fellow explorers worldwide.  
+    </p>
+
+    {/* Email Subscription */}
+    <form className="flex flex-col sm:flex-row justify-center items-center gap-4">
+      <input
+        type="email"
+        placeholder="Enter your email..."
+        className="px-6 py-4 rounded-2xl text-gray-900 w-full sm:w-2/3 shadow-md focus:ring-4 focus:ring-pink-300 outline-none text-lg"
+      />
+      <button className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 px-8 py-4 rounded-2xl font-bold shadow-xl hover:scale-105 transform transition text-lg">
+        Join Now
+      </button>
+    </form>
+
+    {/* Small Note */}
+    <p className="mt-6 text-sm opacity-75">
+       No spam. Only travel inspiration & AI tips. Unsubscribe anytime.
+    </p>
+  </div>
+</section>
+
 
       {/* FAQ */}
       <section className="w-full min-h-screen py-32 px-8 bg-white">
