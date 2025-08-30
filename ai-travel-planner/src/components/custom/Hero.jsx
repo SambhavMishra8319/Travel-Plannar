@@ -196,7 +196,7 @@ function Hero() {
       { name: "Pritesh Kumar Rawat", text: "The planner made our Rome trip stress-free. Highly recommend!", img: "/Pritesh.jpg" },
       { name: "Sagar Prajapati", text: "Exploring London with AI’s help made everything so easy and organized!", img: "/Sagar.jpg" },
       { name: "Sujit Kumar", text: "Maldives vacation was dreamy. Loved the hotel and water activities recommendations!", img: "/Sujit.jpg" },
-      { name: "Ananya Sharma", text: "Singapore was so smooth with this planner. Loved the Sentosa Island and Marina Bay recommendations!", img: "/Ananya.jpg" },
+      { name: "Anish Tiwari", text: "Singapore was so smooth with this planner. Loved the Sentosa Island and Marina Bay recommendations!", img: "/anish.jpg" },
       { name: "Sunil", text: "New York trip was amazing! AI suggested hidden gems beyond the usual Times Square.", img: "/sunil.jpg" },
       // 👇 Extra placeholders for more travelers (you can fill these later)
       { name: "Traveler 13", text: "Amazing experience with this AI planner!", img: "/Traveler13.jpg" },
