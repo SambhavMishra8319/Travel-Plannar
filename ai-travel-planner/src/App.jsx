@@ -1,15 +1,12 @@
 import "./index.css";
-import { useState } from "react";
-import Hero from "./components/custom/Hero"; // 
-
+import Hero from "./components/custom/Hero";
+import Footer from "./components/custom/Footer"; // ✅ Import your footer
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="min-h-screen w-full">
-      {/* Hero */}
+    <div className="min-h-screen w-full flex flex-col">
       <Hero />
+      <Footer />  {/* ✅ Render the footer */}
     </div>
   );
 }

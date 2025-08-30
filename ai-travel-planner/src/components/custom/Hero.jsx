@@ -277,57 +277,6 @@ function Hero() {
         </div>
       </section>
 
-      {/* Footer */}
-<footer className="bg-gray-900 text-white w-full px-6 py-8">
-      {/* Top content */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
-        {/* Branding */}
-        <div>
-          <h2 className="text-2xl font-bold mb-2">AI Travel Planner</h2>
-          <p className="text-sm">
-            Plan your trips effortlessly with AI-powered personalized itineraries, hotel recommendations, and travel insights.
-          </p>
-        </div>
-
-        {/* About */}
-        <div>
-          <h3 className="font-semibold mb-2">About</h3>
-          <ul className="space-y-1 text-sm">
-            <li><a href="#" className="text-white hover:text-white transition">Our Story</a></li>
-            <li><a href="#" className="text-white hover:text-white transition">Team</a></li>
-            <li><a href="#" className="text-white hover:text-white transition">Careers</a></li>
-            <li><a href="#" className="text-white hover:text-white transition">Privacy Policy</a></li>
-          </ul>
-        </div>
-
-        {/* Support */}
-        <div>
-          <h3 className="font-semibold mb-2">Support</h3>
-          <ul className="space-y-1 text-sm">
-            <li><a href="#" className="text-white hover:text-white transition">Help Center</a></li>
-            <li><a href="#" className="text-white hover:text-white transition">Contact Us</a></li>
-            <li><a href="#" className="text-white hover:text-white transition">FAQs</a></li>
-            <li><a href="#" className="text-white hover:text-white transition">Feedback</a></li>
-          </ul>
-        </div>
-
-        {/* Resources */}
-        <div>
-          <h3 className="font-semibold mb-2">Resources</h3>
-          <ul className="space-y-1 text-sm">
-            <li><a href="#" className="text-white hover:text-white transition">Travel Guides</a></li>
-            <li><a href="#" className="text-white hover:text-white transition">AI Tips</a></li>
-            <li><a href="#" className="text-white hover:text-white transition">Blog</a></li>
-            <li><a href="#" className="text-white hover:text-white transition">API Docs</a></li>
-          </ul>
-        </div>
-      </div>
-
-      {/* Bottom copyright */}
-      <div className="mt-8 text-center text-sm text-white">
-        &copy; {new Date().getFullYear()} AI Travel Planner, Inc. All rights reserved.
-      </div>
-    </footer>
     </div>
   );
 }
