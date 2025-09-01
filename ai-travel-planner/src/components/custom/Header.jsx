@@ -45,15 +45,15 @@ function Header() {
       {/* Logo */}
       <a href="/" className="flex items-center gap-3">
         <div className="w-17 h-14  flex items-center">
-          <img
-            src="/logo-1.png"
+          {/* <img
+            src="/logo-1-.png"
             alt="Logo"
             className="max-h-full object-contain"
-          />
+          /> */}
         </div>
       </a>
 
-      {/* Desktop Menu */} 
+      {/* Desktop Menu */}
       <nav className="hidden md:flex items-center gap-8 font-medium">
         <a href="/" className="hover:text-gray-200 transition">Home</a>
         <a href="/about" className="hover:text-gray-200 transition">About Us</a>
@@ -84,7 +84,8 @@ function Header() {
                 <p className="text-sm font-semibold mb-2">{user?.name}</p>
                 <hr className="my-2 border-gray-300" />
                 <button
-                  className="text-red-600 font-semibold hover:text-red-800 w-full text-left"
+                  className="w-full text-center bg-red-600 text-white font-semibold px-4 py-2 rounded-lg shadow-md 
+             hover:bg-red-700 hover:scale-105 hover:shadow-lg transition-all duration-300"
                   onClick={() => {
                     googleLogout();
                     localStorage.removeItem("user");
@@ -93,6 +94,7 @@ function Header() {
                 >
                   Logout
                 </button>
+
               </PopoverContent>
             </Popover>
           </div>
@@ -115,9 +117,8 @@ function Header() {
 
       {/* Mobile Menu (Slide-in Sidebar) */}
       <div
-        className={`fixed top-0 right-0 h-full w-3/4 bg-black text-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 ${
-          menuOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`fixed top-0 right-0 h-full w-3/4 bg-black text-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 ${menuOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         {/* Close Button */}
         <div className="flex justify-end p-4">
@@ -175,7 +176,7 @@ function Header() {
         <DialogContent className="max-w-sm w-full p-6 rounded-lg shadow-lg bg-white flex flex-col items-center text-center border border-gray-300">
           <DialogHeader>
             <h2 className="font-bold text-lg text-black">Sign In With Google</h2>
-          
+
           </DialogHeader>
           <DialogDescription className="text-gray-600 text-sm mt-2">
             Sign in to the App with Google authentication securely

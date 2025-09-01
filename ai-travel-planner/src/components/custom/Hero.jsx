@@ -37,95 +37,98 @@ function Hero() {
         </Link>
       </div>
 
-      {/* How it Works Section */}
-      <section className="py-24 px-6 max-w-7xl mx-auto text-center">
-        <h2 className="text-5xl font-extrabold mb-16 bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
-          How It Works
-        </h2>
-        <div className="grid md:grid-cols-3 gap-12">
-          {[
-            {
-              icon: <FaSearchLocation className="text-3xl text-white" />,
-              title: "Choose Destination",
-              desc: "Pick where you want to go, anywhere in the world.",
-              gradient: "from-blue-500 to-indigo-500",
-            },
-            {
-              icon: <FaCalendarAlt className="text-3xl text-white" />,
-              title: "Set Preferences",
-              desc: "Select budget, days, and who you’re traveling with.",
-              gradient: "from-green-500 to-emerald-500",
-            },
-            {
-              icon: <FaRobot className="text-3xl text-white" />,
-              title: "AI Generates Plan",
-              desc: "Get a customized day-by-day itinerary instantly.",
-              gradient: "from-purple-500 to-pink-500",
-            },
-          ].map((item, idx) => (
-            <div
-              key={idx}
-              className="p-8 rounded-2xl shadow-lg bg-white/80 backdrop-blur-lg border border-gray-100 hover:shadow-2xl transform hover:-translate-y-2 transition duration-500"
-            >
-              <div
-                className={`w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-gradient-to-r ${item.gradient} shadow-md mb-6`}
-              >
-                {item.icon}
-              </div>
-              <h3 className="font-bold text-2xl mb-3 text-gray-800">{item.title}</h3>
-              <p className="text-gray-600 text-base">{item.desc}</p>
-            </div>
-          ))}
+  {/* How It Works Section */}
+<section className="py-12 px-4 max-w-5xl mx-auto text-center">
+  <h2 className="text-2xl sm:text-3xl font-extrabold mb-10 bg-gradient-to-r from-blue-600 to-green-500 bg-clip-text text-transparent">
+    How It Works
+  </h2>
+  <div className="grid md:grid-cols-3 gap-4">
+    {[
+      {
+        icon: <FaSearchLocation className="text-xl text-white" />,
+        title: "Choose Destination",
+        desc: "Pick where you want to go, anywhere in the world.",
+        gradient: "from-blue-500 to-indigo-500",
+      },
+      {
+        icon: <FaCalendarAlt className="text-xl text-white" />,
+        title: "Set Preferences",
+        desc: "Select budget, days, and who you’re traveling with.",
+        gradient: "from-green-500 to-emerald-500",
+      },
+      {
+        icon: <FaRobot className="text-xl text-white" />,
+        title: "AI Generates Plan",
+        desc: "Get a customized day-by-day itinerary instantly.",
+        gradient: "from-purple-500 to-pink-500",
+      },
+    ].map((item, idx) => (
+      <div
+        key={idx}
+        className="p-4 rounded-lg shadow-md bg-white/90 backdrop-blur-sm border border-gray-100 hover:shadow-lg transform hover:-translate-y-1 transition duration-300"
+      >
+        <div className={`w-12 h-12 mx-auto flex items-center justify-center rounded-full bg-gradient-to-r ${item.gradient} shadow-md mb-3`}>
+          {item.icon}
         </div>
-      </section>
+        <h3 className="font-semibold text-lg mb-1 text-gray-800">{item.title}</h3>
+        <p className="text-gray-600 text-sm">{item.desc}</p>
+      </div>
+    ))}
+  </div>
+</section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-24 px-6 bg-gradient-to-r from-blue-50 via-green-50 to-blue-100">
-        <h2 className="text-5xl font-extrabold text-center mb-16 text-gray-800">Why Choose Us?</h2>
-        <div className="grid md:grid-cols-3 gap-12 max-w-7xl mx-auto">
-          {[
-            {
-              icon: <FaMapMarkedAlt className="text-3xl text-white" />,
-              title: "Personalized Itineraries",
-              desc: "AI crafts trips just for you based on your budget, time, and style.",
-              gradient: "from-blue-500 to-indigo-500",
-            },
-            {
-              icon: <FaUsers className="text-3xl text-white" />,
-              title: "Travel with Friends",
-              desc: "Plan solo or group adventures with ease — everyone’s included.",
-              gradient: "from-green-500 to-emerald-500",
-            },
-            {
-              icon: <FaRegStar className="text-3xl text-white" />,
-              title: "Trusted & Loved",
-              desc: "Thousands of happy travelers use our planner for stress-free trips.",
-              gradient: "from-yellow-400 to-orange-500",
-            },
-          ].map((item, idx) => (
-            <div
-              key={idx}
-              className="p-8 bg-white/90 backdrop-blur-md rounded-2xl shadow-lg hover:shadow-2xl transform hover:scale-105 transition duration-500 text-center"
-            >
-              <div
-                className={`w-16 h-16 mx-auto flex items-center justify-center rounded-full bg-gradient-to-r ${item.gradient} shadow-md mb-6`}
-              >
-                {item.icon}
-              </div>
-              <h3 className="font-semibold text-2xl text-gray-800 mb-3">{item.title}</h3>
-              <p className="text-gray-600">{item.desc}</p>
-            </div>
-          ))}
+{/* Why Choose Us Section */}
+<section className="py-12 px-4">
+  <h2 className="text-2xl sm:text-3xl font-extrabold text-center mb-10 text-gray-800">
+    Why Choose Us?
+  </h2>
+  <div className="grid md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+    {[
+      {
+        icon: <FaMapMarkedAlt className="text-xl text-white" />,
+        title: "Personalized Itineraries",
+        desc: "AI crafts trips just for you based on your budget, time, and style.",
+        gradient: "from-blue-500 to-indigo-500",
+      },
+      {
+        icon: <FaUsers className="text-xl text-white" />,
+        title: "Travel with Friends",
+        desc: "Plan solo or group adventures with ease — everyone’s included.",
+        gradient: "from-green-500 to-emerald-500",
+      },
+      {
+        icon: <FaRegStar className="text-xl text-white" />,
+        title: "Trusted & Loved",
+        desc: "Thousands of happy travelers use our planner for stress-free trips.",
+        gradient: "from-yellow-400 to-orange-500",
+      },
+    ].map((item, idx) => (
+      <div
+        key={idx}
+        className="p-4 backdrop-blur-sm rounded-lg shadow-md hover:shadow-lg transform hover:scale-105 transition duration-300 text-center"
+      >
+        <div className={`w-12 h-12 mx-auto flex items-center justify-center rounded-full bg-gradient-to-r ${item.gradient} shadow-md mb-3`}>
+          {item.icon}
         </div>
-      </section>
+        <h3 className="font-semibold text-lg text-gray-800 mb-1">{item.title}</h3>
+        <p className="text-gray-600 text-sm">{item.desc}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+
+
 {/* Explore Section */}
-<section className="py-20 bg-gradient-to-b from-gray-50 to-gray-100 px-6">
-  <h2 className="text-4xl font-extrabold text-center mb-6 text-gray-800">Explore Destinations</h2>
-  <p className="text-lg text-gray-600 text-center mb-12 max-w-3xl mx-auto">
+<section className="py-8 px-3">
+  <h2 className="text-xl sm:text-2xl font-extrabold text-center mb-4 text-gray-800">
+    Explore Destinations
+  </h2>
+  <p className="text-xs sm:text-sm text-gray-600 text-center mb-6 max-w-3xl mx-auto">
     Discover breathtaking places across the globe. From city skylines to tropical escapes — let AI curate your next adventure.
   </p>
 
-  <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+  <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 max-w-5xl mx-auto">
     {[
       { img: "tajmahal.jpg", name: "Taj Mahal (Agra)", desc: "The symbol of eternal love, a UNESCO wonder.", link: "https://en.wikipedia.org/wiki/Taj_Mahal", map: "https://www.google.com/maps/place/agra" },
       { img: "varanasi.jpg", name: "Varanasi", desc: "The spiritual heart of India on the banks of the Ganges.", link: "https://en.wikipedia.org/wiki/Varanasi", map: "https://www.google.com/maps/place/Varanasi" },
@@ -146,30 +149,30 @@ function Hero() {
     ].map((item, idx) => (
       <div
         key={idx}
-        className="relative overflow-hidden rounded-2xl shadow-lg group hover:shadow-2xl hover:scale-[1.03] transition duration-500"
+        className="relative overflow-hidden rounded-lg shadow-md group hover:shadow-lg hover:scale-[1.01] transition duration-300"
       >
         {/* Map Button - Top Right */}
         <a
           href={item.map}
           target="_blank"
           rel="noopener noreferrer"
-          className="absolute top-2 right-2 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white text-xs font-semibold px-3 py-1.5 rounded-full shadow-md hover:shadow-lg transition-all duration-300 z-20"
+          className="absolute top-1 right-1 bg-gradient-to-r from-blue-500 to-blue-700 hover:from-blue-600 hover:to-blue-800 text-white text-[9px] font-semibold px-2 py-0.5 rounded-full shadow-md hover:shadow-lg transition-all duration-300 z-20"
         >
           View on Map
         </a>
 
-        {/* Whole card links to Wikipedia */}
+        {/* Wikipedia Link */}
         <a href={item.link} target="_blank" rel="noopener noreferrer" className="block">
           <img
             src={`/${item.img}`}
             alt={item.name}
-            className="w-full h-64 object-cover group-hover:brightness-90 transition"
+            className="w-full h-36 sm:h-40 object-cover group-hover:brightness-90 transition"
           />
 
-          {/* Overlay (info) */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent flex flex-col justify-end p-4 pointer-events-none">
-            <h3 className="text-white font-bold text-lg">{item.name}</h3>
-            <p className="text-gray-200 text-sm">{item.desc}</p>
+          {/* Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent flex flex-col justify-end p-2 pointer-events-none">
+            <h3 className="text-white font-semibold text-xs">{item.name}</h3>
+            <p className="text-gray-200 text-[8px] sm:text-[9px]">{item.desc}</p>
           </div>
         </a>
       </div>
@@ -178,13 +181,15 @@ function Hero() {
 </section>
 
 
+
+
       {/* Testimonials */}
-   <section className="py-16 bg-gradient-to-br from-indigo-50 via-blue-50 to-indigo-100 px-6 relative overflow-hidden">
-  <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-12 text-gray-800 drop-shadow-sm">
+<section className="py-8 px-3">
+  <h2 className="text-xl sm:text-2xl font-extrabold text-center mb-6 text-gray-800 drop-shadow-sm">
     What Our Travelers Say
   </h2>
 
-  <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 max-w-7xl mx-auto">
+  <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 max-w-5xl mx-auto">
     {[
       { name: "Jitesh Keshari", text: "The AI Travel Planner made my trip to Jaipur so easy! It covered forts, palaces, and local food perfectly.", img: "/Jitesh_kumar.jpg" },
       { name: "Himanshu Kumar", text: "I went to Manali with friends — the itinerary suggested the best adventure spots. Unforgettable trip!", img: "/Himanshu_Kumar.jpg" },
@@ -196,86 +201,77 @@ function Hero() {
       { name: "Pritesh Kumar Rawat", text: "The planner made our Rome trip stress-free. Highly recommend!", img: "/Pritesh.jpg" },
       { name: "Bikaram Hawaldar", text: "Exploring London with AI’s help made everything so easy and organized!", img: "/Bikaram.jpg" },
       { name: "Sujit Kumar", text: "Maldives vacation was dreamy. Loved the hotel and water activities recommendations!", img: "/Sujit.jpg" },
-      { name: "Ansh Tiwari", text: "Singapore was so smooth with this planner. Loved the Sentosa Island and Marina Bay recommendations!", img: "/anish.jpg" },
-      { name: "Sunil", text: "New York trip was amazing! AI suggested hidden gems beyond the usual Times Square.", img: "/sunil.jpg" },
-      // 👇 Extra placeholders for more travelers (you can fill these later)
-      { name: "Sagar Prajapati", text: "Paris was unforgettable! From the Eiffel Tower to cozy cafés, the AI planned it all.", img: "/Sagar.jpg" },
-      { name: "Sadhugun Ram", text: "Reykjavik trip was incredible! From the Northern Lights to hot springs, the AI planner made it effortless.", img: "/sadhgun.jpg" },
-      { name: "Vibha Rishtha Grandhala", text: "Switzerland felt like a dream — the Alps and lakes were planned perfectly within budget", img: "/vibha.jpg" },
-      
+      { name: "Ansh Tiwari", text: "Singapore was so smooth with this planner. Loved the Sentosa Island and Marina Bay recommendations!", img: "/anish.jpg" }, { name: "Sunil", text: "New York trip was amazing! AI suggested hidden gems beyond the usual Times Square.", img: "/sunil.jpg" }, // 👇 Extra placeholders for more travelers (you can fill these later) 
+      { name: "Sagar Prajapati", text: "Paris was unforgettable! From the Eiffel Tower to cozy cafés, the AI planned it all.", img: "/Sagar.jpg" }, { name: "Sadhugun Ram", text: "Reykjavik trip was incredible! From the Northern Lights to hot springs, the AI planner made it effortless.", img: "/sadhgun.jpg" }, { name: "Vibha Rishtha Grandhala", text: "Switzerland felt like a dream — the Alps and lakes were planned perfectly within budget", img: "/vibha.jpg" },
     ].map((review, idx) => (
       <div
         key={idx}
-        className="p-4 bg-white rounded-xl shadow-md hover:shadow-xl transform hover:-translate-y-1 transition duration-300 text-center border border-gray-100"
+        className="p-3 bg-white rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition duration-300 text-center border border-gray-100"
       >
         <img
           src={review.img}
           alt={review.name}
-          className="w-14 h-14 rounded-full mx-auto mb-2 object-cover border-2 border-indigo-100 shadow-sm"
+          className="w-10 h-10 rounded-full mx-auto mb-1 object-cover border-2 border-indigo-100 shadow-sm"
         />
-        <p className="text-gray-600 italic text-sm leading-snug">“{review.text}”</p>
-        <h3 className="mt-3 font-semibold text-gray-900 text-sm">- {review.name}</h3>
+        <p className="text-gray-600 italic text-xs leading-snug">“{review.text}”</p>
+        <h3 className="mt-2 font-semibold text-gray-900 text-xs">- {review.name}</h3>
       </div>
     ))}
   </div>
 </section>
-
-
-
-      {/* Newsletter */}
-      <section className="w-full mx-auto py-20 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 text-white text-center relative overflow-hidden rounded-3xl shadow-2xl">
-  {/* Background Glow Effect */}
-  <div className="absolute -top-20 -left-20 w-72 h-72 bg-pink-400 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-pulse"></div>
-  <div className="absolute -bottom-20 -right-20 w-72 h-72 bg-indigo-400 rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-pulse"></div>
-
+{/* Newsletter */}
+<section className="mx-auto py-8 bg-white text-gray-900 text-center relative overflow-hidden rounded-2xl shadow-2xl max-w-10xl">
   {/* Content */}
-  <div className="relative z-10 max-w-3xl mx-auto px-6">
-    <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 drop-shadow-lg leading-tight">
-       Join Our Global Travel Community
+  <div className="relative z-10 mx-auto px-6">
+    <h2 className="text-2xl sm:text-3xl font-extrabold mb-4 leading-snug">
+      Join Our Travel Community
     </h2>
-    <p className="mb-10 text-lg sm:text-xl opacity-95">
-      Be the first to get <span className="font-semibold">AI-powered itineraries</span>, 
-      exclusive <span className="font-semibold">travel hacks</span>, and connect with fellow explorers worldwide.  
+    <p className="mb-6 text-sm sm:text-base opacity-90">
+      Get <span className="font-semibold">AI itineraries</span> & <span className="font-semibold">travel tips</span> delivered first!
     </p>
 
     {/* Email Subscription */}
-    <form className="flex flex-col sm:flex-row justify-center items-center gap-4">
+    <form className="flex flex-col sm:flex-row justify-center items-center gap-3">
       <input
         type="email"
         placeholder="Enter your email..."
-        className="px-6 py-4 rounded-2xl text-gray-900 w-full sm:w-2/3 shadow-md focus:ring-4 focus:ring-pink-300 outline-none text-lg"
+        className="px-4 py-3 rounded-2xl text-gray-900 w-full sm:w-2/3 shadow-md focus:ring-2 focus:ring-indigo-300 outline-none text-sm"
       />
-      <button className="bg-gradient-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 px-8 py-4 rounded-2xl font-bold shadow-xl hover:scale-105 transform transition text-lg">
+      <button className="bg-gradient-to-r from-indigo-600 to-blue-500 hover:from-blue-600 hover:to-indigo-600 px-6 py-3 rounded-2xl font-bold shadow-lg hover:scale-105 transform transition text-sm text-white">
         Join Now
       </button>
     </form>
 
     {/* Small Note */}
-    <p className="mt-6 text-sm opacity-75">
-       No spam. Only travel inspiration & AI tips. Unsubscribe anytime.
+    <p className="mt-4 text-xs opacity-70">
+       No spam. Unsubscribe anytime.
     </p>
   </div>
 </section>
 
-      {/* Final CTA */}
-      <section className="relative w-full py-24 md:py-32 bg-gradient-to-r from-blue-50 to-indigo-100 text-gray-900 text-center overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/travel-pattern.png')] opacity-5"></div>
-        <div className="relative z-10 px-6 max-w-4xl mx-auto flex flex-col items-center">
-          <h2 className="text-4xl md:text-6xl font-extrabold mb-8 leading-snug">
-            Ready to Plan Your <span className="text-indigo-600">Dream Trip?</span>
-          </h2>
-          <p className="mb-10 text-lg md:text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
-            Start your journey today with our <span className="font-semibold text-indigo-600">AI-powered travel planner</span> 
-            and explore the world stress-free. Whether it’s a weekend getaway or an international adventure, 
-            we’ve got you covered.
-          </p>
-          <Link to="/create-trip">
-            <Button className="bg-gradient-to-r from-indigo-600 to-blue-500 text-white text-lg md:text-xl px-10 py-4 rounded-full shadow-lg hover:scale-105 transition duration-300">
-              Start Planning Now
-            </Button>
-          </Link>
-        </div>
-      </section>
+
+{/* Final CTA */}
+<section className="relative py-16 bg-white text-gray-900 text-center overflow-hidden">
+  {/* Background pattern */}
+  <div className="absolute inset-0 bg-[url('/travel-pattern.png')] opacity-5"></div>
+
+  {/* Content */}
+  <div className="relative z-10 px-6 max-w-5xl mx-auto flex flex-col items-center">
+    <h2 className="text-3xl sm:text-4xl font-extrabold mb-6 leading-snug">
+      Ready to Plan Your <span className="text-indigo-600">Dream Trip?</span>
+    </h2>
+    <p className="mb-8 text-base sm:text-lg text-gray-700 leading-relaxed">
+      Start your journey with our <span className="font-semibold text-indigo-600">AI-powered travel planner</span> 
+      and explore the world stress-free. Weekend getaways or international adventures, we’ve got you covered.
+    </p>
+    <Link to="/create-trip">
+      <Button className="bg-gradient-to-r from-indigo-600 to-blue-500 text-white text-base sm:text-lg px-10 py-4 rounded-full shadow-lg hover:scale-105 transition duration-300">
+        Start Planning Now
+      </Button>
+    </Link>
+  </div>
+</section>
+
 
     </div>
   );
