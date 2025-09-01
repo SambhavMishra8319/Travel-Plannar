@@ -40,25 +40,6 @@ const Contact = () => {
 
           <ul className="space-y-4 text-gray-700">
             <li>
-              <span className="font-semibold">Sundaram</span>{" "}
-              —{" "}
-              <a
-                href="mailto:23bds060@iiitdwd.ac.in"
-                className="text-blue-600 hover:underline"
-              >
-                23bds060@iiitdwd.ac.in
-              </a>
-            </li>
-            <li>
-              <span className="font-semibold">Sambhav Mishra</span> —{" "}
-              <a
-                href="mailto:23bds050@iiitdwd.ac.in"
-                className="text-blue-600 hover:underline"
-              >
-                23bds050@iiitdwd.ac.in
-              </a>
-            </li>
-            <li>
               <span className="font-semibold">Aggimalla Abhishek</span> —{" "}
               <a
                 href="mailto:23bds004@iiitdwd.ac.in"
@@ -74,6 +55,24 @@ const Contact = () => {
                 className="text-blue-600 hover:underline"
               >
                 23bds037@iiitdwd.ac.in
+              </a>
+            </li>
+            <li>
+              <span className="font-semibold">Sambhav Mishra</span> —{" "}
+              <a
+                href="mailto:23bds050@iiitdwd.ac.in"
+                className="text-blue-600 hover:underline"
+              >
+                23bds050@iiitdwd.ac.in
+              </a>
+            </li>
+            <li>
+              <span className="font-semibold">Sundaram</span> —{" "}
+              <a
+                href="mailto:23bds060@iiitdwd.ac.in"
+                className="text-blue-600 hover:underline"
+              >
+                23bds060@iiitdwd.ac.in
               </a>
             </li>
           </ul>
