@@ -1,5 +1,11 @@
 import { Link } from "react-router-dom";
 import { Button } from "../ui/button";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay, A11y } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 import { FaSearchLocation, FaCalendarAlt, FaRobot, FaMapMarkedAlt, FaUsers, FaRegStar } from "react-icons/fa";
 import React from "react";
 
@@ -183,13 +189,23 @@ function Hero() {
 
 
 
-      {/* Testimonials */}
+{/* Testimonials */}{/* Testimonials */}
+{/* Testimonials */}
 <section className="py-8 px-3">
   <h2 className="text-xl sm:text-2xl font-extrabold text-center mb-6 text-gray-800 drop-shadow-sm">
     What Our Travelers Say
   </h2>
 
-  <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 max-w-5xl mx-auto">
+  <Swiper
+    modules={[Navigation, Pagination, Autoplay, A11y]}
+    slidesPerView={1}
+    spaceBetween={16}
+    loop
+    autoplay={{ delay: 2500, disableOnInteraction: false, pauseOnMouseEnter: true }}
+    pagination={{ clickable: true, dynamicBullets: true }}
+    navigation
+    className="max-w-3xl mx-auto"
+  >
     {[
       { name: "Jitesh Keshari", text: "The AI Travel Planner made my trip to Jaipur so easy! It covered forts, palaces, and local food perfectly.", img: "/Jitesh_kumar.jpg" },
       { name: "Himanshu Kumar", text: "I went to Manali with friends — the itinerary suggested the best adventure spots. Unforgettable trip!", img: "/Himanshu_Kumar.jpg" },
@@ -201,24 +217,29 @@ function Hero() {
       { name: "Pritesh Kumar Rawat", text: "The planner made our Rome trip stress-free. Highly recommend!", img: "/Pritesh.jpg" },
       { name: "Bikaram Hawaldar", text: "Exploring London with AI’s help made everything so easy and organized!", img: "/Bikaram.jpg" },
       { name: "Sujit Kumar", text: "Maldives vacation was dreamy. Loved the hotel and water activities recommendations!", img: "/Sujit.jpg" },
-      { name: "Ansh Tiwari", text: "Singapore was so smooth with this planner. Loved the Sentosa Island and Marina Bay recommendations!", img: "/anish.jpg" }, { name: "Sunil", text: "New York trip was amazing! AI suggested hidden gems beyond the usual Times Square.", img: "/sunil.jpg" }, // 👇 Extra placeholders for more travelers (you can fill these later) 
-      { name: "Sagar Prajapati", text: "Paris was unforgettable! From the Eiffel Tower to cozy cafés, the AI planned it all.", img: "/Sagar.jpg" }, { name: "Sadhugun Ram", text: "Reykjavik trip was incredible! From the Northern Lights to hot springs, the AI planner made it effortless.", img: "/sadhgun.jpg" }, { name: "Vibha Rishtha Grandhala", text: "Switzerland felt like a dream — the Alps and lakes were planned perfectly within budget", img: "/vibha.jpg" },
+      { name: "Ansh Tiwari", text: "Singapore was so smooth with this planner. Loved the Sentosa Island and Marina Bay recommendations!", img: "/anish.jpg" },
+      { name: "Sunil", text: "New York trip was amazing! AI suggested hidden gems beyond the usual Times Square.", img: "/sunil.jpg" },
+      { name: "Sagar Prajapati", text: "Paris was unforgettable! From the Eiffel Tower to cozy cafés, the AI planned it all.", img: "/Sagar.jpg" },
+      { name: "Sadhugun Ram", text: "Reykjavik trip was incredible! From the Northern Lights to hot springs, the AI planner made it effortless.", img: "/sadhgun.jpg" },
+      { name: "Rishtha Grandhala", text: "Switzerland felt like a dream — the Alps and lakes were planned perfectly within budget", img: "/vibha.jpg" },
     ].map((review, idx) => (
-      <div
-        key={idx}
-        className="p-3 bg-white rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition duration-300 text-center border border-gray-100"
-      >
-        <img
-          src={review.img}
-          alt={review.name}
-          className="w-10 h-10 rounded-full mx-auto mb-1 object-cover border-2 border-indigo-100 shadow-sm"
-        />
-        <p className="text-gray-600 italic text-xs leading-snug">“{review.text}”</p>
-        <h3 className="mt-2 font-semibold text-gray-900 text-xs">- {review.name}</h3>
-      </div>
+      <SwiperSlide key={idx}>
+        <div className="flex justify-center">
+          <div className="p-3 sm:p-4 bg-white rounded-lg shadow-md hover:shadow-lg transform transition duration-300 text-center border border-gray-100 w-[90%] sm:w-2/3 md:w-1/2">
+            <img
+              src={review.img}
+              alt={review.name}
+              className="w-14 h-14 sm:w-16 sm:h-16 rounded-full mx-auto mb-2 object-cover border-2 border-indigo-100 shadow-sm"
+            />
+            <p className="text-gray-600 italic text-xs sm:text-sm leading-snug">“{review.text}”</p>
+            <h3 className="mt-2 font-semibold text-gray-900 text-xs sm:text-sm">- {review.name}</h3>
+          </div>
+        </div>
+      </SwiperSlide>
     ))}
-  </div>
+  </Swiper>
 </section>
+
 {/* Newsletter */}
 <section className="mx-auto py-8 bg-white text-gray-900 text-center relative overflow-hidden rounded-2xl shadow-2xl max-w-10xl">
   {/* Content */}
