@@ -13,12 +13,12 @@ const config = {
 export const GetPlaceDetails = async (data) => {
     try {
         const response = await axios.post(BASE_URL, data, config);
-        return response.data;
+        return response; // ← Return the FULL response, not just response.data
     } catch (error) {
-        console.error("API Error:", error.response?.data || error.message);
+        console.error("Google Places API Error:", error.response?.data || error.message);
         throw error;
     }
 };
 
 export const PHOTO_REF_URL = (name) =>
-    `https://places.googleapis.com/v1/${name}/media?maxHeightPx=1000&maxWidthPx=1000&key=${import.meta.env.VITE_GOOGLE_PLACE_API_KEY}`;
+    `https://places.googleapis.com/v1/${name}/media?maxHeightPx=400&maxWidthPx=400&key=${import.meta.env.VITE_GOOGLE_PLACE_API_KEY}`;

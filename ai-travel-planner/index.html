@@ -4,11 +4,65 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/travel.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AI Travel planner</title>
+    <title>AI Travel Planner</title>
   </head>
   <body>
     <div id="root"></div>
+
+    <!-- Main React App -->
     <script type="module" src="/src/main.jsx"></script>
+
+    <!-- Tidio Chat (async load) -->
     <script src="//code.tidio.co/keg87zk4ml57iowuqiw6ynbcueabbzy9.js" async></script>
+
+    <script>
+      var vapiInstance = null;
+      const assistant = "4b59eca0-e7ce-46ec-bab7-2216883f3d38"; // your assistant ID
+      const apiKey = "702fc049-3c75-451d-8179-a8845600ecd5"; // your public key
+
+      // Custom button styles
+      const customButtonStyle = {
+        background: "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+        borderRadius: "25px",
+        padding: "12px 30px",
+        fontSize: "14px",
+        fontWeight: "600",
+        color: "#fff",
+        boxShadow: "0 4px 15px rgba(102, 126, 234, 0.4)",
+      };
+
+      // Custom panel styles
+      const customPanelStyle = {
+        background: "linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)",
+        borderRadius: "16px",
+        border: "2px solid #e1e8ed",
+        backdropFilter: "blur(10px)",
+      };
+
+      // Combine into buttonConfig
+      const buttonConfig = {
+        style: customButtonStyle,
+        panelStyle: customPanelStyle,
+        position: "bottom-right", // ensures it shows at the right-bottom corner
+      };
+
+      (function (d, t) {
+        var g = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+        g.src =
+          "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
+        g.defer = true;
+        g.async = true;
+        s.parentNode.insertBefore(g, s);
+
+        g.onload = function () {
+          vapiInstance = window.vapiSDK.run({
+            apiKey: apiKey, // mandatory
+            assistant: assistant, // mandatory
+            config: buttonConfig, // optional custom styles
+          });
+        };
+      })(document, "script");
+    </script>
   </body>
 </html>
