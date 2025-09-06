@@ -326,7 +326,7 @@ function Hero() {
         </div>
       </section>
 
-      <style jsx>{`
+           <style>{`
         @keyframes float-slow {
           0%, 100% { transform: translateY(0) translateX(0) rotate(0deg); }
           33% { transform: translateY(-20px) translateX(10px) rotate(2deg); }
@@ -345,6 +345,7 @@ function Hero() {
         .animate-float-medium { animation: float-medium 8s ease-in-out infinite; }
         .animate-float-fast { animation: float-fast 6s ease-in-out infinite; }
       `}</style>
+
     </div>
   );
 }
