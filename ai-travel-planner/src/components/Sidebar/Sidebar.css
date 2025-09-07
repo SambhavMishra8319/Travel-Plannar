@@ -3,42 +3,43 @@
   top: 0;
   left: 0;
   height: 100vh;
-  background-color: white;
-  box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  width: 150px; /* fixed width */
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.08);
   overflow: hidden;
-  transition: width 0.3s ease;
-  z-index: 50;
-}
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  z-index: 40;
 
-.sidebar.closed {
-  width: 60px; /* collapsed width */
+  /* initially hidden above */
+  opacity: 0;
+  transform: translateY(-100%);
 }
 
 .sidebar.open {
-  width: 220px; /* expanded width */
+  opacity: 1;
+  transform: translateY(0); /* slide down into view */
 }
 
-.menu-icon {
-  cursor: pointer;
-  padding: 1rem;
-  font-size: 1.5rem;
-  color: black;
+.sidebar.closed {
+  opacity: 0;
+  transform: translateY(-100%); /* slide back up */
 }
 
 .menu-list {
   list-style: none;
   padding: 0;
-  margin-top: 2rem;
+  margin: 0;
+  padding-top: 70px; /* sidebar content niche se start hoga */
 }
-
 .menu-item {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  padding: 0.75rem 1rem;
+  gap: 0.6rem;
+  padding: 0.6rem 0.8rem;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: black;
+  transition: background-color 0.2s ease;
 }
 
 .menu-item:hover {
