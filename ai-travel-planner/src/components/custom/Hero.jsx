@@ -6,7 +6,7 @@ import { useEffect, useRef, useState } from "react";
 function Hero() {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
-
+  const [visibleCount, setVisibleCount] = useState(2); 
   useEffect(() => {
     setIsVisible(true);
     
@@ -165,8 +165,7 @@ function Hero() {
           </div>
         </div>
       </section>
-
-      {/* Enhanced Explore Section */}
+           {/* Enhanced Explore Section */}
       <section className="py-16 px-4 bg-white relative overflow-hidden">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
@@ -178,9 +177,10 @@ function Hero() {
             </p>
           </div>
 
+          {/* Destinations */}
           <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {[
-              { img: "tajmahal.jpg", name: "Taj Mahal (Agra)", desc: "The symbol of eternal love, a UNESCO wonder.", link: "https://en.wikipedia.org/wiki/Taj_Mahal", map: "https://www.google.com/maps/place/agra" },
+              { img: "tajmahal.jpg", name: "Taj Mahal (Agra)", desc: "The symbol of eternal love, a UNESCO wonder.", link: "https://en.wikipedia.org/wiki/Taj_Mahal", map: "https://www.google.com/maps/place/Agra" },
               { img: "varanasi.jpg", name: "Varanasi", desc: "The spiritual heart of India on the banks of the Ganges.", link: "https://en.wikipedia.org/wiki/Varanasi", map: "https://www.google.com/maps/place/Varanasi" },
               { img: "jaipur.jpg", name: "Jaipur", desc: "The Pink City known for forts, palaces, and vibrant bazaars.", link: "https://en.wikipedia.org/wiki/Jaipur", map: "https://www.google.com/maps/place/Jaipur" },
               { img: "kerala.jpg", name: "Kerala", desc: "Backwaters, beaches, and serene houseboat escapes.", link: "https://en.wikipedia.org/wiki/Kerala", map: "https://www.google.com/maps/place/Kerala" },
@@ -188,59 +188,77 @@ function Hero() {
               { img: "goa.jpg", name: "Goa", desc: "Golden beaches, nightlife, and Portuguese heritage.", link: "https://en.wikipedia.org/wiki/Goa", map: "https://www.google.com/maps/place/Goa" },
               { img: "paris.jpg", name: "Paris", desc: "The city of lights, romance, and timeless art.", link: "https://en.wikipedia.org/wiki/Paris", map: "https://www.google.com/maps/place/Paris" },
               { img: "bali.jpg", name: "Bali", desc: "A tropical paradise with beaches & temples.", link: "https://en.wikipedia.org/wiki/Bali", map: "https://www.google.com/maps/place/Bali" },
-            ].map((item, idx) => (
-              <div
-                key={idx}
-                className="relative overflow-hidden rounded-2xl shadow-lg group hover:shadow-2xl transition-all duration-500"
-              >
-                {/* Map Button */}
-                <a
-                  href={item.map}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="absolute top-3 right-3 bg-white/90 text-blue-600 text-xs font-semibold px-3 py-1.5 rounded-full shadow-md hover:bg-blue-600 hover:text-white transition-all duration-300 z-20 backdrop-blur-sm"
+              { img: "rome.jpg", name: "Rome", desc: "The Eternal City with ancient history and modern charm.", link: "https://en.wikipedia.org/wiki/Rome", map: "https://www.google.com/maps/place/Rome" },
+              { img: "singapore.jpg", name: "Singapore", desc: "A futuristic city with gardens, food, and culture.", link: "https://en.wikipedia.org/wiki/Singapore", map: "https://www.google.com/maps/place/Singapore" },
+              { img: "maldives.jpg", name: "Maldives", desc: "Overwater villas, turquoise lagoons, and coral reefs.", link: "https://en.wikipedia.org/wiki/Maldives", map: "https://www.google.com/maps/place/Maldives" },
+              { img: "newyork.jpg", name: "New York", desc: "The city that never sleeps, full of lights and life.", link: "https://en.wikipedia.org/wiki/New_York_City", map: "https://www.google.com/maps/place/New+York" },
+              { img: "dubai.jpg", name: "Dubai", desc: "Skyscrapers, luxury shopping, and desert adventures.", link: "https://en.wikipedia.org/wiki/Dubai", map: "https://www.google.com/maps/place/Dubai" },
+              { img: "tokyo.jpg", name: "Tokyo", desc: "A vibrant mix of tradition and futuristic tech.", link: "https://en.wikipedia.org/wiki/Tokyo", map: "https://www.google.com/maps/place/Tokyo" },
+              { img: "sydney.jpg", name: "Sydney", desc: "Home to the Opera House and stunning harbor views.", link: "https://en.wikipedia.org/wiki/Sydney", map: "https://www.google.com/maps/place/Sydney" },
+              { img: "egypt.webp", name: "Pyramids of Giza", desc: "Ancient wonders and timeless Egyptian history.", link: "https://en.wikipedia.org/wiki/Giza_pyramid_complex", map: "https://www.google.com/maps/place/Giza+pyramids" },
+         
+            ]
+              .slice(0, visibleCount * 4)
+              .map((item, idx) => (
+                <div
+                  key={idx}
+                  className="relative overflow-hidden rounded-2xl shadow-lg group hover:shadow-2xl transition-all duration-500"
                 >
-                  View Map
-                </a>
+                  {/* Map Button */}
+                  <a
+                    href={item.map}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="absolute top-3 right-3 bg-white/90 text-blue-600 text-xs font-semibold px-3 py-1.5 rounded-full shadow-md hover:bg-blue-600 hover:text-white transition-all duration-300 z-20 backdrop-blur-sm"
+                  >
+                    View Map
+                  </a>
 
-                <a href={item.link} target="_blank" rel="noopener noreferrer" className="block">
-                  <div className="h-48 overflow-hidden">
-                    <img
-                      src={`/${item.img}`}
-                      alt={item.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                  </div>
+                  <a href={item.link} target="_blank" rel="noopener noreferrer" className="block">
+                    <div className="h-48 overflow-hidden">
+                      <img
+                        src={`/${item.img}`}
+                        alt={item.name}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                    </div>
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col justify-end p-5">
-                    <h3 className="text-white font-bold text-sm mb-1">{item.name}</h3>
-                    <p className="text-gray-200 text-xs">{item.desc}</p>
-                  </div>
-                </a>
-              </div>
-            ))}
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col justify-end p-5">
+                      <h3 className="text-white font-bold text-sm mb-1">{item.name}</h3>
+                      <p className="text-gray-200 text-xs">{item.desc}</p>
+                    </div>
+                  </a>
+                </div>
+              ))}
+          </div>
+
+          {/* Show More / Show Less Button */}
+          <div className="text-center mt-10">
+            <button
+              onClick={() =>
+                setVisibleCount(visibleCount === 2 ? 4 : 2)
+              }
+              className="bg-blue-600 text-white font-semibold px-6 py-2 rounded-full shadow-md hover:bg-blue-700 transition-all"
+            >
+              {visibleCount === 2 ? "Show More  " : "Show Less "}
+            </button>
           </div>
 
           <div className="text-center mt-10">
-            <Link to="/destinations">
-              <Button variant="outline" className="rounded-full px-8 py-3 border-blue-500 text-blue-600 hover:bg-blue-500 hover:text-white transition-colors">
-                View All Destinations
-              </Button>
-            </Link>
+            <Link to="/destinations"></Link>
           </div>
         </div>
       </section>
-              
-      {/* Enhanced Newsletter */}
+ {/* Enhanced Newsletter */}
       <section className="py-16 px-4 bg-white relative overflow-hidden">
         <div className="absolute -top-20 -right-20 w-60 h-60 bg-blue-100/30 rounded-full blur-3xl -z-10"></div>
         <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-purple-100/30 rounded-full blur-3xl -z-10"></div>
         
-        <div className="max-w-2xl mx-auto text-center p-8 bg-gradient-to-br from-blue-50 to-indigo-50/50 rounded-3xl shadow-lg border border-blue-100/60">
+        <div className="max-w-2xl mx-auto text-center p-8 bg-gradient-to-br from-blue-50 to-indigo-50/50 rounded-3xl shadow-lg border border-blue-300/60">
           <h2 className="text-3xl font-bold mb-4 text-gray-800">
             Join Our Travel Community
           </h2>
-          <p className="mb-6 text-gray-600">
+          <p className="mb-6 text-gray-800">
             Get <span className="font-semibold text-blue-600">AI itineraries</span> & <span className="font-semibold text-blue-600">travel tips</span> delivered first!
           </p>
 
@@ -248,14 +266,14 @@ function Hero() {
             <input
               type="email"
               placeholder="Enter your email..."
-              className="flex-grow px-5 py-3 rounded-2xl border border-gray-200 focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none shadow-sm"
+              className="flex-grow px-5 py-3 rounded-2xl border border-gray-1000 focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none shadow-sm"
             />
             <button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-6 py-3 rounded-2xl font-semibold text-white shadow-md hover:shadow-lg transition-all duration-300">
               Join Now
             </button>
           </form>
 
-          <p className="mt-4 text-sm text-gray-500">
+          <p className="mt-2 text-sm text-gray-500">
             No spam. Unsubscribe anytime.
           </p>
         </div>
