@@ -45,10 +45,10 @@ function Hero() {
 
         {/* Enhanced Heading with animation */}
         <h1 className={`text-center leading-tight tracking-tight max-w-4xl transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <span className="block font-extrabold text-[48px] sm:text-[64px] md:text-[80px] text-white drop-shadow-2xl bg-clip-text text-transparent bg-gradient-to-r from-white to-blue-100">
+          <span className="block font-extrabold text-[48px] sm:text-[64px] md:text-[80px] text-blue drop-shadow-2xl bg-clip-text text-transparent bg-gradient-to-r from-white to-white">
             AI TRAVEL PLANNER
           </span>
-          <span className="mt-4 block text-blue-100 font-medium text-xl md:text-2xl italic drop-shadow-md tracking-wider">
+          <span className="mt-4 block text-white-500 font-medium text-xl md:text-2xl italic drop-shadow-md tracking-wider">
             Your journey, our intelligent planning
           </span>
         </h1>
