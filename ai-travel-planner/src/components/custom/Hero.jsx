@@ -254,11 +254,11 @@ function Hero() {
         <div className="absolute -top-20 -right-20 w-60 h-60 bg-blue-100/30 rounded-full blur-3xl -z-10"></div>
         <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-purple-100/30 rounded-full blur-3xl -z-10"></div>
         
-        <div className="max-w-2xl mx-auto text-center p-8 bg-gradient-to-br from-blue-50 to-indigo-50/50 rounded-3xl shadow-lg border border-blue-100/60">
+        <div className="max-w-2xl mx-auto text-center p-8 bg-gradient-to-br from-blue-50 to-indigo-50/50 rounded-3xl shadow-lg border border-blue-300/60">
           <h2 className="text-3xl font-bold mb-4 text-gray-800">
             Join Our Travel Community
           </h2>
-          <p className="mb-6 text-gray-600">
+          <p className="mb-6 text-gray-800">
             Get <span className="font-semibold text-blue-600">AI itineraries</span> & <span className="font-semibold text-blue-600">travel tips</span> delivered first!
           </p>
 
@@ -266,14 +266,14 @@ function Hero() {
             <input
               type="email"
               placeholder="Enter your email..."
-              className="flex-grow px-5 py-3 rounded-2xl border border-gray-200 focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none shadow-sm"
+              className="flex-grow px-5 py-3 rounded-2xl border border-gray-1000 focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none shadow-sm"
             />
             <button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-6 py-3 rounded-2xl font-semibold text-white shadow-md hover:shadow-lg transition-all duration-300">
               Join Now
             </button>
           </form>
 
-          <p className="mt-4 text-sm text-gray-500">
+          <p className="mt-2 text-sm text-gray-500">
             No spam. Unsubscribe anytime.
           </p>
         </div>
