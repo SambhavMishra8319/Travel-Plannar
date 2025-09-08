@@ -30,7 +30,7 @@ function Hero() {
         ref={sectionRef}
         className="relative w-full min-h-screen flex flex-col items-center justify-start px-6 gap-8 pt-32 transition-transform duration-300 ease-out"
         style={{
-          backgroundImage: "url('/p-6.jpg')",
+          backgroundImage: "url('/white.jpg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: 'fixed',
@@ -39,29 +39,58 @@ function Hero() {
       >
         
         {/* Animated floating elements */}
-        <div className="absolute top-20 left-10 w-72 h-72 bg-blue-400/10 rounded-full mix-blend-overlay filter blur-xl animate-float-slow"></div>
-        <div className="absolute bottom-20 right-10 w-80 h-80 bg-purple-400/10 rounded-full mix-blend-overlay filter blur-xl animate-float-medium"></div>
-        <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-teal-400/10 rounded-full mix-blend-overlay filter blur-xl animate-float-fast"></div>
+      <div className="relative w-full min-h-screen flex flex-col md:flex-row items-start justify-between px-10 md:px-20 pt-8">
+  {/* Left Side - Text & Button */}
+  <div className="flex-1 mt-0 md:mt-0 z-10">
+    {/* Background floating shapes */}
+    <div className="absolute top-5 left-10 w-72 h-72 bg-blue-400/10 rounded-full mix-blend-overlay filter blur-xl animate-float-slow"></div>
+    <div className="absolute bottom-20 right-10 w-80 h-80 bg-purple-400/10 rounded-full mix-blend-overlay filter blur-xl animate-float-medium"></div>
+    <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-teal-400/10 rounded-full mix-blend-overlay filter blur-xl animate-float-fast"></div>
 
-        {/* Enhanced Heading with animation */}
-        <h1 className={`text-center leading-tight tracking-tight max-w-4xl transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <span className="block font-extrabold text-[48px] sm:text-[64px] md:text-[80px] text-blue drop-shadow-2xl bg-clip-text text-transparent bg-gradient-to-r from-white to-white">
-            AI TRAVEL PLANNER
-          </span>
-          <span className="mt-4 block text-white-500 font-medium text-xl md:text-2xl italic drop-shadow-md tracking-wider">
-            Your journey, our intelligent planning
-          </span>
-        </h1>
+    {/* Heading */}
+<h1
+  className={`leading-tight tracking-tight max-w-4xl transform transition-all duration-1000 ml-14 ${
+    isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+  }`}
+>
+  <span className="block font-extrabold text-[48px] sm:text-[64px] md:text-[80px] text-black drop-shadow-2xl">
+    AI TRAVEL PLANNER
+  </span>
+  <span className="mt-4 block text-black font-medium text-xl md:text-2xl italic drop-shadow-md tracking-wider">
+    Your Journey, Our Intelligent Planning
+  </span>
+</h1>
 
-        {/* Enhanced CTA Button */}
-        <div className={`transform transition-all duration-1000 delay-300 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <Link to="/create-trip">
-            <Button className="mt-10 bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white text-lg px-10 py-5 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 group">
-              Start Planning for Free
-              <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </Link>
-        </div>
+{/* CTA Button */}
+<div
+  className={`w-full transform transition-all duration-1000 delay-300 flex justify-start ml-14 ${
+    isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+  }`}
+>
+  <Link to="/create-trip">
+    <Button className="mt-8 bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white text-lg px-10 py-5 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 group">
+      Start Planning
+      <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
+    </Button>
+  </Link>
+</div>
+
+
+  </div>
+
+  {/* Right Side - Image */}
+  <div className="flex-1 flex justify-center mt-5 md:mt-0 relative -translate-y-5">
+    <img
+      src="/flyte.jpg" // 👈 keep airplane.jpg in public folder
+      alt="Airplane"
+      className="w-full max-w-xl md:max-w-2xl object-contain drop-shadow-2xl rounded-3xl transform transition-all duration-700 hover:scale-105 hover:rotate-1"
+    />
+    {/* Decorative glow behind image */}
+    <div className="absolute inset-0 bg-blue-500/20 blur-3xl rounded-full -z-10"></div>
+  </div>
+</div>
+
+
 
         {/* Scroll indicator */}
         <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">

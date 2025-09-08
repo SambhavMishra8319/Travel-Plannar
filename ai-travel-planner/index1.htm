@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Travel Planner</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: white;
+      color: #333;
+    }
+
+    /* Hero Section */
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 100vh;
+      padding: 80px 10%;
+      background: #fff;
+      position: relative;
+    }
+
+    /* Left Content */
+    .hero-content {
+      max-width: 600px;
+    }
+
+    .hero-content h1 {
+      font-size: 64px;
+      font-weight: 800;
+      color: #111;
+      line-height: 1.2;
+    }
+
+    .hero-content p {
+      margin-top: 20px;
+      font-size: 20px;
+      color: #555;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 40px;
+      background: #2563eb; /* blue */
+      color: white;
+      font-size: 18px;
+      font-weight: 600;
+      border-radius: 12px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .cta-btn:hover {
+      background: #1e40af;
+      transform: scale(1.05);
+    }
+
+    /* Right Image */
+    .hero-image img {
+      max-width: 500px;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Scroll Indicator */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .mouse {
+      width: 28px;
+      height: 48px;
+      border: 2px solid #666;
+      border-radius: 20px;
+      position: relative;
+    }
+
+    .wheel {
+      width: 6px;
+      height: 10px;
+      background: #666;
+      border-radius: 3px;
+      position: absolute;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: scroll 1.5s infinite;
+    }
+
+    @keyframes scroll {
+      0% { opacity: 1; top: 8px; }
+      50% { opacity: 0; top: 18px; }
+      100% { opacity: 1; top: 8px; }
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 60px 5%;
+      }
+
+      .hero-image img {
+        margin-top: 40px;
+        max-width: 90%;
+      }
+
+      .hero-content h1 {
+        font-size: 48px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>AI TRAVEL <br> PLANNER</h1>
+      <p>Your Journey, Our Intelligent Planning</p>
+      <a href="#" class="cta-btn">Start Planning →</a>
+    </div>
+
+    <div class="hero-image">
+      <img src="p-6.jpg" alt="Airplane">
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

@@ -41,7 +41,8 @@ function Header() {
   };
 
   return (
-   <header className="sticky top-0 z-50 flex h-16 items-center justify-between px-4 md:px-8 bg-gradient-to-br from-blue-300 to-green-300  shadow-lg text-white">
+   <header className="sticky top-0 z-50 flex h-16 items-center justify-between px-4 md:px-8 bg-white shadow-lg text-white">
+
 {/* Logo */}
       <a href="/" className="flex items-center gap-3">
         <div className="w-17 h-14  flex items-center">
@@ -55,10 +56,12 @@ function Header() {
 
       {/* Desktop Menu */}
       <nav className="hidden md:flex items-center gap-8 font-medium">
-        <a href="/" className="hover:text-gray-200 transition">Home</a>
-        <a href="/about" className="hover:text-gray-200 transition">About Us</a>
-        <a href="/contact" className="hover:text-gray-200 transition">Contact Us</a>
-        <a href="/features" className="hover:text-gray-200 transition">Features</a>
+  <a href="/" className="text-black hover:text-gray-600 transition">Home</a>
+  <a href="/about" className="text-black hover:text-gray-600 transition">About Us</a>
+  <a href="/contact" className="text-black hover:text-gray-600 transition">Contact Us</a>
+  <a href="/features" className="text-black hover:text-gray-600 transition">Features</a>
+
+
 
         {user ? (
           <div className="flex items-center gap-4 ml-6">
