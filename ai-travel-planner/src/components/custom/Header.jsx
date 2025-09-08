@@ -119,60 +119,80 @@ function Header() {
       </div>
 
       {/* Mobile Menu (Slide-in Sidebar) */}
-      <div
-        className={`fixed top-0 right-0 h-full w-3/4 bg-black text-white shadow-lg transform transition-transform duration-300 ease-in-out z-50 ${menuOpen ? "translate-x-0" : "translate-x-full"
-          }`}
+     {/* Mobile Menu Button */}
+{/* Mobile Menu Button */}
+<button
+  className="md:hidden p-3 rounded-full bg-white shadow-md hover:bg-gray-100 focus:outline-none transition"
+  onClick={() => setMenuOpen(true)}
+>
+  {/* Hamburger lines */}
+  <div className="space-y-1">
+    <span className="block w-6 h-0.5 bg-black rounded"></span>
+    <span className="block w-6 h-0.5 bg-black rounded"></span>
+    <span className="block w-6 h-0.5 bg-black rounded"></span>
+  </div>
+</button>
+
+{/* Slide-out Mobile Menu */}
+<div
+  className={`fixed top-0 right-0 h-full w-3/4 bg-white text-black shadow-xl rounded-l-2xl transform transition-transform duration-300 ease-in-out z-50 ${menuOpen ? "translate-x-0" : "translate-x-full"
+    }`}
+>
+  {/* Close Button */}
+  <div className="flex justify-end p-4">
+    <button
+      onClick={() => setMenuOpen(false)}
+      className="p-2 rounded-full hover:bg-gray-200 transition"
+    >
+      <X size={28} className="text-black" />
+    </button>
+  </div>
+
+  {/* Menu Links */}
+  <div className="flex flex-col gap-6 text-lg font-medium px-6 py-4">
+    <a href="/" className="text-black hover:text-gray-600 transition" onClick={() => setMenuOpen(false)}>Home</a>
+    <a href="/about" className="text-black hover:text-gray-600 transition" onClick={() => setMenuOpen(false)}>About Us</a>
+    <a href="/contact" className="text-black hover:text-gray-600 transition" onClick={() => setMenuOpen(false)}>Contact Us</a>
+    <a href="/features" className="text-black hover:text-gray-600 transition" onClick={() => setMenuOpen(false)}>Features</a>
+
+    {user ? (
+      <>
+        <a href="/create-trip">
+          <Button className="w-full rounded-full bg-gray-500 text-white px-5 py-2 shadow hover:bg-gray-400 transition">
+            + Create Trip
+          </Button>
+        </a>
+        <a href="/my-trips">
+          <Button className="w-full rounded-full bg-black text-white px-5 py-2 shadow hover:bg-gray-800 transition">
+            My Trips
+          </Button>
+        </a>
+        <button
+          className="text-red-600 font-semibold text-left hover:text-red-800 transition"
+          onClick={() => {
+            googleLogout();
+            localStorage.removeItem("user");
+            window.location.reload();
+          }}
+        >
+          Logout
+        </button>
+      </>
+    ) : (
+      <Button
+        onClick={() => {
+          setOpenDialog(true);
+          setMenuOpen(false);
+        }}
+        className="w-full rounded-full bg-blue-600 text-white px-6 py-2 shadow hover:bg-blue-700 transition"
       >
-        {/* Close Button */}
-        <div className="flex justify-end p-4">
-          <button onClick={() => setMenuOpen(false)}>
-            <X size={28} />
-          </button>
-        </div>
+        Sign In
+      </Button>
+    )}
+  </div>
+</div>
 
-        {/* Menu Links */}
-        <div className="flex flex-col gap-6 text-lg font-medium px-6">
-          <a href="/" className="hover:text-gray-300" onClick={() => setMenuOpen(false)}>Home</a>
-          <a href="/about" className="hover:text-gray-300" onClick={() => setMenuOpen(false)}>About Us</a>
-          <a href="/contact" className="hover:text-gray-300" onClick={() => setMenuOpen(false)}>Contact Us</a>
-          <a href="/features" className="hover:text-gray-300" onClick={() => setMenuOpen(false)}>Features</a>
 
-          {user ? (
-            <>
-              <a href="/create-trip">
-                <Button className="w-full rounded-full bg-black text-white px-5 py-2 shadow hover:bg-gray-800 transition">
-                  + Create Trip
-                </Button>
-              </a>
-              <a href="/my-trips">
-                <Button className="w-full rounded-full bg-black text-white px-5 py-2 shadow hover:bg-gray-800 transition">
-                  My Trips
-                </Button>
-              </a>
-              <button
-                className="text-red-600 font-semibold text-left hover:text-red-800"
-                onClick={() => {
-                  googleLogout();
-                  localStorage.removeItem("user");
-                  window.location.reload();
-                }}
-              >
-                Logout
-              </button>
-            </>
-          ) : (
-            <Button
-              onClick={() => {
-                setOpenDialog(true);
-                setMenuOpen(false);
-              }}
-              className="w-full rounded-full bg-blue-600 text-white px-6 py-2 shadow hover:bg-blue-700 transition"
-            >
-              Sign In
-            </Button>
-          )}
-        </div>
-      </div>
 
       {/* Google Sign-In Dialog */}
       <Dialog open={openDialog} onOpenChange={setOpenDialog}>

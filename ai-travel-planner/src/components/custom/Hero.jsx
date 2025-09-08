@@ -280,54 +280,48 @@ function Hero() {
       </section>
  {/* Enhanced Newsletter */}
       <section className="py-16 px-4 bg-white relative overflow-hidden">
-        <div className="absolute -top-20 -right-20 w-60 h-60 bg-blue-100/30 rounded-full blur-3xl -z-10"></div>
-        <div className="absolute -bottom-20 -left-20 w-60 h-60 bg-purple-100/30 rounded-full blur-3xl -z-10"></div>
-        
-        <div className="max-w-2xl mx-auto text-center p-8 bg-gradient-to-br from-blue-50 to-indigo-50/50 rounded-3xl shadow-lg border border-blue-300/60">
-          <h2 className="text-3xl font-bold mb-4 text-gray-800">
-            Join Our Travel Community
-          </h2>
-          <p className="mb-6 text-gray-800">
-            Get <span className="font-semibold text-blue-600">AI itineraries</span> & <span className="font-semibold text-blue-600">travel tips</span> delivered first!
-          </p>
+  <div className="max-w-2xl mx-auto text-center p-8 bg-white rounded-3xl shadow-lg border border-gray-200">
+    <h2 className="text-3xl font-bold mb-4 text-gray-800">
+      Join Our Travel Community
+    </h2>
+    <p className="mb-6 text-gray-700">
+      Get <span className="font-semibold text-blue-600">AI itineraries</span> & <span className="font-semibold text-blue-600">travel tips</span> delivered first!
+    </p>
 
-          <form className="flex flex-col sm:flex-row gap-3 justify-center items-stretch">
-            <input
-              type="email"
-              placeholder="Enter your email..."
-              className="flex-grow px-5 py-3 rounded-2xl border border-gray-1000 focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none shadow-sm"
-            />
-            <button className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 px-6 py-3 rounded-2xl font-semibold text-white shadow-md hover:shadow-lg transition-all duration-300">
-              Join Now
-            </button>
-          </form>
+    <form className="flex flex-col sm:flex-row gap-3 justify-center items-stretch">
+      <input
+        type="email"
+        placeholder="Enter your email..."
+        className="flex-grow px-5 py-3 rounded-2xl border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:border-transparent outline-none shadow-sm"
+      />
+      <button className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-2xl font-semibold text-white shadow-md hover:shadow-lg transition-all duration-300">
+        Join Now
+      </button>
+    </form>
 
-          <p className="mt-2 text-sm text-gray-500">
-            No spam. Unsubscribe anytime.
-          </p>
-        </div>
-      </section>
+    <p className="mt-2 text-sm text-gray-500">
+      No spam. Unsubscribe anytime.
+    </p>
+  </div>
+</section>
 
-      {/* Enhanced Final CTA */}
-      <section className="py-20 px-4 bg-gradient-to-br from-gray-900 to-blue-900 text-white text-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-overlay"></div>
-        <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-teal-400"></div>
-        
-        <div className="max-w-4xl mx-auto relative z-10">
-          <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            Ready to Plan Your <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-teal-400">Dream Trip?</span>
-          </h2>
-          <p className="mb-10 text-xl text-blue-100 max-w-3xl mx-auto">
-            Start your journey with our AI-powered travel planner and explore the world stress-free. Weekend getaways or international adventures, we've got you covered.
-          </p>
-          <Link to="/create-trip">
-            <Button className="bg-gradient-to-r from-blue-500 to-teal-500 hover:from-blue-600 hover:to-teal-600 text-white text-lg px-10 py-6 rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 hover:scale-105 group">
-              Start Planning Now
-              <FaArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </Button>
-          </Link>
-        </div>
-      </section>
+
+      {/* Professional CTA Section */}
+<section className="py-20 px-4 bg-white text-gray-800 text-center relative overflow-hidden">
+  <div className="max-w-4xl mx-auto relative z-10">
+    <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+      Ready to Plan Your <span className="text-blue-600">Dream Trip?</span>
+    </h2>
+    <p className="mb-10 text-lg text-gray-700 max-w-3xl mx-auto">
+      Start your journey with our AI-powered travel planner and explore the world stress-free. Whether it's weekend getaways or international adventures, we have the perfect plan for you.
+    </p>
+    <Link to="/create-trip">
+      <button className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-10 py-5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+        Start Planning Now
+      </button>
+    </Link>
+  </div>
+</section>
 
            <style>{`
         @keyframes float-slow {
