@@ -24,7 +24,7 @@ const Contact = () => {
               href="mailto:aitravelplanner.team@gmail.com"
               className="text-blue-600 hover:underline"
             >
-              aitravelplanner.team@gmail.com
+              travelplanner.team@gmail.com
             </a>
           </div>
         </div>
@@ -40,21 +40,21 @@ const Contact = () => {
 
           <ul className="space-y-4 text-gray-700">
             <li>
+              <span className="font-semibold">Sundaram</span> —{" "}
+              <a
+                href="mailto:23bds060@iiitdwd.ac.in"
+                className="text-blue-600 hover:underline"
+              >
+                23bds060@iiitdwd.ac.in
+              </a>
+            </li>
+            <li>
               <span className="font-semibold">Aggimalla Abhishek</span> —{" "}
               <a
                 href="mailto:23bds004@iiitdwd.ac.in"
                 className="text-blue-600 hover:underline"
               >
                 23bds004@iiitdwd.ac.in
-              </a>
-            </li>
-            <li>
-              <span className="font-semibold">Nenavath Likhith</span> —{" "}
-              <a
-                href="mailto:23bds037@iiitdwd.ac.in"
-                className="text-blue-600 hover:underline"
-              >
-                23bds037@iiitdwd.ac.in
               </a>
             </li>
             <li>
@@ -67,12 +67,12 @@ const Contact = () => {
               </a>
             </li>
             <li>
-              <span className="font-semibold">Sundaram</span> —{" "}
+              <span className="font-semibold">Nenavath Likhith</span> —{" "}
               <a
-                href="mailto:23bds060@iiitdwd.ac.in"
+                href="mailto:23bds037@iiitdwd.ac.in"
                 className="text-blue-600 hover:underline"
               >
-                23bds060@iiitdwd.ac.in
+                23bds037@iiitdwd.ac.in
               </a>
             </li>
           </ul>

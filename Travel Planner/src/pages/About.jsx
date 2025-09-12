@@ -10,7 +10,7 @@ function About() {
 
       {/* Description */}
       <p className="text-base md:text-lg max-w-3xl text-center text-gray-700 leading-relaxed">
-        Welcome to <span className="font-semibold text-indigo-600">AI Travel Planner</span>.  
+        Welcome to <span className="font-semibold text-indigo-600">Travel Planner</span>.  
         We make traveling simple, smart, and stress-free.  
         With the help of <span className="font-semibold text-indigo-600">Artificial Intelligence</span>,  
         our platform creates custom travel plans, finds the right hotels, and
@@ -23,7 +23,7 @@ function About() {
         <div className="bg-gray-50 shadow-md rounded-xl p-6 text-center hover:shadow-lg transition">
           <h3 className="text-lg font-semibold text-indigo-700 mb-2">Smart Plans</h3>
           <p className="text-gray-600 text-sm">
-            Get ready-to-use travel routes designed by AI, so you enjoy more and plan less.
+            Get ready-to-use travel routes designed by Travel Planner , so you enjoy more and plan less.
           </p>
         </div>
 
@@ -46,7 +46,7 @@ function About() {
 
       {/* Closing Line */}
       <p className="mt-12 text-base md:text-lg text-gray-700 text-center max-w-2xl">
-        With <span className="font-semibold text-indigo-600">AI Travel Planner</span>,  
+        With <span className="font-semibold text-indigo-600">Travel Planner</span>,  
         every trip becomes easier, smarter, and more enjoyable. 🌍✨
       </p>
     </section>
