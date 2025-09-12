@@ -121,7 +121,7 @@ function CreateTrip() {
           Tell Us Your Travel Preferences 
         </h2>
         <p className="mt-4 text-gray-700 text-lg text-center max-w-2xl mx-auto drop-shadow">
-          Just provide some basic details and our AI-powered planner will create a{" "}
+          Just provide some basic details and our Travel planner will create a{" "}
           <span className="font-semibold text-yellow-500">custom itinerary</span> 
           tailored just for you.
         </p>
@@ -255,7 +255,7 @@ function CreateTrip() {
             <h2 className="font-bold text-lg text-black">Sign In With Google</h2>
           </DialogHeader>
           <DialogDescription className="text-gray-700 text-sm mt-2">
-            Sign in to securely access AI-powered trip planning.
+            Sign in to securely access  Trip Planning.
           </DialogDescription>
           <Button
             onClick={login}

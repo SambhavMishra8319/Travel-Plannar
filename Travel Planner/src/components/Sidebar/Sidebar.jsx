@@ -27,7 +27,7 @@ const Sidebar = () => {
     { icon: <FaStar />, label: "Attractions & Tours" },
     { icon: <FaShip />, label: "Cruises" },
     { icon: <FaMapMarkedAlt />, label: "Travel Inspiration" },
-    { icon: <FaTicketAlt />, label: "AI Trip Planner" },
+    { icon: <FaTicketAlt />, label: "Trip Planner" },
     { icon: <FaMap />, label: "Interactive Map" },
     { icon: <FaStar />, label: "Rewards & Offers" },
   ];

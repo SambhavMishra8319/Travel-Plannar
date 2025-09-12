@@ -54,7 +54,7 @@ function Hero() {
   }`}
 >
   <span className="block font-extrabold text-[48px] sm:text-[64px] md:text-[80px] text-black drop-shadow-2xl">
-    AI TRAVEL PLANNER
+     TRAVEL PLANNER
   </span>
   <span className="mt-4 block text-black font-medium text-xl md:text-2xl italic drop-shadow-md tracking-wider">
     Your Journey, Our Intelligent Planning
@@ -285,7 +285,7 @@ function Hero() {
       Join Our Travel Community
     </h2>
     <p className="mb-6 text-gray-700">
-      Get <span className="font-semibold text-blue-600">AI itineraries</span> & <span className="font-semibold text-blue-600">travel tips</span> delivered first!
+      Get <span className="font-semibold text-blue-600"> Itineraries</span> & <span className="font-semibold text-blue-600">Travel tips</span> delivered first!
     </p>
 
     <form className="flex flex-col sm:flex-row gap-3 justify-center items-stretch">
@@ -313,7 +313,7 @@ function Hero() {
       Ready to Plan Your <span className="text-blue-600">Dream Trip?</span>
     </h2>
     <p className="mb-10 text-lg text-gray-700 max-w-3xl mx-auto">
-      Start your journey with our AI-powered travel planner and explore the world stress-free. Whether it's weekend getaways or international adventures, we have the perfect plan for you.
+      Start your journey with our Travel planner and explore the world stress-free. Whether it's weekend getaways or international adventures, we have the perfect plan for you.
     </p>
     <Link to="/create-trip">
       <button className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-10 py-5 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">

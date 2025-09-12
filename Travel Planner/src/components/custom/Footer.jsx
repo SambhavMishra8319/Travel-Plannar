@@ -7,9 +7,9 @@ function Footer() {
       <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Branding */}
         <div>
-          <h2 className="text-2xl font-bold mb-2">AI Travel Planner</h2>
+          <h2 className="text-2xl font-bold mb-2"> Travel Planner</h2>
           <p className="text-sm text-gray-600">
-            Plan your trips effortlessly with AI-powered personalized itineraries, hotel recommendations, and travel insights.
+            Plan your trips effortlessly with personalized itineraries, hotel recommendations, and travel insights.
           </p>
         </div>
 
@@ -48,7 +48,7 @@ function Footer() {
       </div>
 
       <div className="mt-8 text-center text-sm text-gray-500">
-        &copy; {new Date().getFullYear()} AI Travel Planner, Inc. All rights reserved.
+        &copy; {new Date().getFullYear()}  Travel Planner, Inc. All rights reserved.
       </div>
     </footer>
   );
