@@ -46,5 +46,54 @@ Currently, this project handles data on the frontend.
 
 ## 🗂️ Folder Structure
 
-Here’s a clean overview of your project directory:
+```
+TRAVEL_PLANNER/
+├── node_modules/ # Installed dependencies
+├── public/ # Static public assets (favicon, images, etc.)
+├── src/ # Core application source code
+│ ├── assets/ # Images, icons, and fonts
+│ ├── components/ # Reusable React components
+│ ├── constants/ # App-wide constants and configurations
+│ ├── create-trip/ # Module for creating new trips
+│ ├── hooks/ # Custom React hooks
+│ ├── my-trips/ # Module for displaying user's saved trips
+│ ├── pages/ # Page-level components
+│ ├── service/ # API and data-handling logic
+│ ├── view-trip/ # View detailed itineraries
+│ ├── App.css # Global styles for App component
+│ ├── App.jsx # Root component of the app
+│ ├── index.css # Global styles
+│ └── main.jsx # Entry point of the React app
+├── .env.local # Local environment variables
+├── .gitignore # Git ignored files
+├── components.json # UI library configuration (Shadcn/UI)
+├── eslint.config.js # ESLint setup
+├── index.html # Root HTML file
+├── package.json # Project metadata and dependencies
+├── postcss.config.js # PostCSS configuration
+├── tailwind.config.js # Tailwind CSS setup
+├── vercel.json # Vercel deployment configuration
+└── vite.config.js # Vite configuration
 
+```
+
+
+---
+
+##  Getting Started
+
+Follow these steps to run the project locally on your system.
+
+### **Prerequisites**
+Make sure you have the following installed:
+- [Node.js](https://nodejs.org/) (v18 or later)
+- npm or yarn package manager
+
+---
+
+### **Installation**
+
+Clone the repository:
+```bash
+git clone https://github.com/Sundaram-Dev/Travel-Planner.git
+cd Travel-Planner
