@@ -1,99 +1,118 @@
-#  Travel Planner
+#  Travel Planner: LLMs and Services for Smart Itinerary Generation
 
-**Travel Planner** is a modern, user-friendly web application designed to make trip planning simple, organized, and enjoyable.  
-Whether you’re creating a weekend getaway or a long international vacation, this app helps you plan every detail — from destinations and durations to daily activities and notes.
-
-Built with **React**, **Vite**, and **Tailwind CSS**, this project demonstrates clean architecture, modular design, and responsive user interfaces optimized for all devices.
+**Team Members:**  
+Sundaram, Sambhav Mishra, Aggimalla Abhishek, Nenavath Likhith Naik  
+**Faculty Guide:** Snehalatha S H, Animesh Chaturvedi  
+**Department of Data Science and Artificial Intelligence**  
+**Indian Institute of Information Technology, Dharwad**  
+Dharwad, Karnataka, India  
 
 ---
 
 ##  Project Overview
 
-Travel Planner empowers users to create and manage personalized travel itineraries with ease.  
-The app features a minimal yet elegant UI that focuses on usability, performance, and scalability — making trip planning efficient and stress-free.
+**Travel Planner** is a full-stack web application that revolutionizes the way users plan their trips.  
+Traditionally, travelers rely on multiple platforms—flights, hotels, maps, weather forecasts—which makes planning fragmented and time-consuming.  
+Our system introduces an **AI-powered solution using Google’s Gemini LLM**, enabling **smart, personalized, and automated itinerary generation**.
+
+Through natural language prompts such as *destination*, *duration*, *budget*, and *preferences*, users can generate a **structured, day-by-day itinerary** that integrates **real-world data** like maps and weather.  
+
+This project was developed as a **college group project** under the Department of Data Science and AI, IIIT Dharwad.
 
 ---
 
 ##  Key Features
 
-- **Effortless Trip Creation** – Add your trip title, destination, and duration in seconds.  
-- **Personal Dashboard** – View and manage all your trips in one clean interface.  
-- **Detailed Itinerary View** – Explore each trip’s activities, notes, and schedules in a structured view.  
-- **Reusable Architecture** – Modular code structure for better scalability and maintainability.  
-- **Responsive Design** – Fully optimized for desktops, tablets, and mobile devices.  
-- **Fast Development Experience** – Built with Vite for lightning-fast build and reload times.  
-- **Deployed Seamlessly** – Hosted on **Vercel** for reliable performance and zero-configuration deployment.
+- **AI-Powered Itinerary Generation** – Uses **Google Gemini LLM** to understand user preferences and create contextual, realistic travel plans.  
+- **Smart Personalization** – Generates custom recommendations based on user budget, travel type, and interests.  
+- **Real-Time Data Integration** – Connects with **Google Maps** and **Weather APIs** for up-to-date route and weather information.  
+- **Dynamic Updates** – Automatically adjusts itineraries using live data to ensure practical travel schedules.  
+- **User Authentication** – Powered by **Firebase Auth** for secure login and personalized trip storage.  
+- **Scalable Architecture** – Modular frontend–backend design ensures flexibility and easy future expansion.  
+- **Responsive UI** – Built with **React**, **Vite**, and **Tailwind CSS** for a smooth experience across all devices.  
+
+---
+
+##  System Architecture
+
+The system follows a **three-tier architecture** — *Frontend, Backend, and External Services.*
+
+###  Frontend  
+- Developed with **React.js (Vite)** and **Tailwind CSS**.  
+- Provides an intuitive interface where users enter trip details and view AI-generated itineraries.  
+- Integrated with **Firebase Authentication** for secure access.  
+- Deployed seamlessly on **Vercel**.
+
+###  Backend  
+- Built using **Node.js** for efficient request handling.  
+- Communicates with:
+  - **Gemini API** – for itinerary generation and reasoning.  
+  - **Firebase Firestore** – for storing user and trip data.  
+  - **Weather API** – for fetching live climate details.  
+- Implements input validation, caching, and concurrency handling for optimized performance.
+
+###  External Services  
+- **Google Gemini LLM** – Core reasoning and content generation engine.  
+- **Google Maps API** – Provides location and navigation data.  
+- **Weather API** – Supplies real-time forecast integration.  
+- **Firebase Auth & Firestore** – Secure user management and cloud storage.
 
 ---
 
 ##  Tech Stack
 
-### **Frontend**
-- **React.js** – Component-based library for dynamic UIs.  
-- **Vite** – Modern build tool with blazing fast HMR.  
-- **Tailwind CSS** – Utility-first CSS framework for custom, responsive styling.  
-
-### **Development Tools**
-- **ESLint** – Ensures consistent coding standards.  
-- **PostCSS** – Enhances and processes styles efficiently.  
-- **Vercel** – Continuous deployment and hosting.  
-
-### **(Optional) Backend / API**
-If you integrate backend services (e.g., Firebase, MongoDB, or REST APIs), mention them here.  
-Currently, this project handles data on the frontend.
+| Category | Technologies |
+|-----------|---------------|
+| **Frontend** | React.js, Vite, Tailwind CSS |
+| **Backend** | Node.js, Express.js |
+| **Database** | Firebase Firestore |
+| **AI Model** | Google Gemini API |
+| **APIs** | Google Maps, Weather API |
+| **Auth & Hosting** | Firebase, Vercel |
+| **Dev Tools** | ESLint, PostCSS |
 
 ---
 
 ## 🗂️ Folder Structure
 
-```
+```bash
 TRAVEL_PLANNER/
-├── node_modules/ # Installed dependencies
-├── public/ # Static public assets (favicon, images, etc.)
-├── src/ # Core application source code
-│ ├── assets/ # Images, icons, and fonts
-│ ├── components/ # Reusable React components
-│ ├── constants/ # App-wide constants and configurations
-│ ├── create-trip/ # Module for creating new trips
+├── node_modules/ # Project dependencies
+├── public/ # Static assets (images, icons, HTML)
+├── src/
+│ ├── assets/ # Icons, fonts, and visuals
+│ ├── components/ # Reusable UI components
+│ ├── constants/ # Configuration and constants
+│ ├── create-trip/ # Module for trip creation
 │ ├── hooks/ # Custom React hooks
-│ ├── my-trips/ # Module for displaying user's saved trips
-│ ├── pages/ # Page-level components
-│ ├── service/ # API and data-handling logic
-│ ├── view-trip/ # View detailed itineraries
-│ ├── App.css # Global styles for App component
-│ ├── App.jsx # Root component of the app
-│ ├── index.css # Global styles
-│ └── main.jsx # Entry point of the React app
-├── .env.local # Local environment variables
-├── .gitignore # Git ignored files
-├── components.json # UI library configuration (Shadcn/UI)
-├── eslint.config.js # ESLint setup
-├── index.html # Root HTML file
-├── package.json # Project metadata and dependencies
-├── postcss.config.js # PostCSS configuration
-├── tailwind.config.js # Tailwind CSS setup
-├── vercel.json # Vercel deployment configuration
-└── vite.config.js # Vite configuration
+│ ├── my-trips/ # User’s saved trips
+│ ├── pages/ # App pages
+│ ├── service/ # API and LLM service handlers
+│ ├── view-trip/ # Detailed trip view
+│ ├── App.jsx # Root component
+│ ├── App.css # Global styles
+│ └── main.jsx # Entry point
+├── .env.local # Environment variables
+├── package.json # Project dependencies and scripts
+├── tailwind.config.js # Tailwind configuration
+├── vite.config.js # Vite configuration
+└── vercel.json # Deployment settings
 
 ```
-
-
----
-
-##  Getting Started
-
-Follow these steps to run the project locally on your system.
+##  Installation and Setup
 
 ### **Prerequisites**
-Make sure you have the following installed:
-- [Node.js](https://nodejs.org/) (v18 or later)
-- npm or yarn package manager
+- Node.js (v18 or higher)  
+- npm or yarn
 
----
-
-### **Installation**
-
-Clone the repository:
+### **Setup Instructions**
 ```bash
-git clone https://github.com/Sundaram-Dev/Travel-Planner.git
-cd Travel-Planner
+# Clone the repository
+git clone https://github.com/your-username/travel-planner.git
+cd travel-planner
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
