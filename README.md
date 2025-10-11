@@ -6,8 +6,9 @@ Sundaram, Sambhav Mishra, Aggimalla Abhishek, Nenavath Likhith Naik
 **Department of Data Science and Artificial Intelligence**  
 **Indian Institute of Information Technology, Dharwad**  
 Dharwad, Karnataka, India  
-![Travel Planner Homepage](public/travel_home.png)
+
 ---
+![Travel Planner Homepage](public/travel_home.png)
 
 ##  Project Overview
 
@@ -155,7 +156,7 @@ Compared to traditional tools like **MakeMyTrip** or **Expedia**, which primaril
 | Collaboration & Group Planning | ✅             | ❌          | ❌       | ❌     |
 | Booking APIs (Flights + Hotels)| ✅             | ✅          | ✅       | ✅     |
 
-## 🔮 Future Enhancements
+##  Future Enhancements
 
 - **Predictive Analytics** – Suggest best travel times and deals using data-driven insights.  
 - **AR Integration** – Overlay landmark information and translations in real time.  
@@ -165,7 +166,7 @@ Compared to traditional tools like **MakeMyTrip** or **Expedia**, which primaril
 
 ---
 
-## ⚠️ Limitations
+##  Limitations
 
 - Dependence on third-party APIs (Google, Weather) for data integrity.  
 - Current model uses general-purpose LLM (**Gemini**) without domain-specific fine-tuning.  
@@ -174,7 +175,7 @@ Compared to traditional tools like **MakeMyTrip** or **Expedia**, which primaril
 
 ---
 
-## 🏁 Conclusion
+##  Conclusion
 
 **Travel Planner** demonstrates how **LLMs** and **AI services** can transform trip planning into an intelligent, interactive, and effortless experience.  
 By integrating modern web technologies with **generative AI**, the system bridges the gap between **research and real-world usability**, offering travelers a **personalized planning assistant** that adapts to their needs.  
