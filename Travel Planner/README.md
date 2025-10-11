@@ -8,7 +8,7 @@ Sundaram, Sambhav Mishra, Aggimalla Abhishek, Nenavath Likhith Naik
 Dharwad, Karnataka, India  
 
 
-[![Travel Planner Homepage](public/front_page.png)](https://your-vercel-deployment-url.vercel.app)
+[![Travel Planner Homepage](public/front_page.png)](https://travel-plannar-20.vercel.app/)
 
 
 ---
