@@ -8,7 +8,8 @@ Sundaram, Sambhav Mishra, Aggimalla Abhishek, Nenavath Likhith Naik
 Dharwad, Karnataka, India  
 
 
-![Travel Planner Homepage](Travel%20Planner/public/front_page.png)
+[![Travel Planner Homepage](Travel%20Planner/public/front_page.png)](https://travel-plannar-20.vercel.app/)
+
 
 ---
 
@@ -151,13 +152,14 @@ Compared to traditional tools like **MakeMyTrip** or **Expedia**, which primaril
 
 ##  Comparison with Existing Platforms
 
-| Feature                       | Travel Planner | MakeMyTrip | Expedia | Yatra |
-|--------------------------------|:--------------:|:-----------:|:--------:|:------:|
-| AI-Generated Itinerary         | ✅             | ❌          | ❌       | ❌     |
-| Real-Time Weather Integration  | ✅             | Basic       | Basic    | ❌     |
-| Cost Estimation                | ✅             | Basic       | ✅       | ❌     |
-| Collaboration & Group Planning | ✅             | ❌          | ❌       | ❌     |
-| Booking APIs (Flights + Hotels)| ✅             | ✅          | ✅       | ✅     |
+| **Feature**                    | **Travel Planner** | **MakeMyTrip** | **Expedia** | **Yatra** |
+|--------------------------------|--------------------|----------------|--------------|------------|
+| AI-Generated Itinerary         | Available          | Not Available  | Not Available | Not Available |
+| Real-Time Weather Integration  | Advanced           | Basic          | Basic         | Not Supported |
+| Cost Estimation                | Detailed           | Basic          | Moderate      | Not Supported |
+| Collaboration & Group Planning | Supported          | Not Available  | Not Available | Not Available |
+| Booking APIs (Flights + Hotels)| Integrated         | Supported       | Supported     | Supported |
+
 
 ##  Future Enhancements
 
