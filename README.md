@@ -7,8 +7,11 @@ Sundaram, Sambhav Mishra, Aggimalla Abhishek, Nenavath Likhith Naik
 **Indian Institute of Information Technology, Dharwad**  
 Dharwad, Karnataka, India  
 
+
+![Travel Planner Homepage](Travel%20Planner/public/front_page.png)
+
 ---
-![Travel Planner Homepage](public/front_page.png)
+
 
 ##  Project Overview
 
