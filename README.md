@@ -8,7 +8,7 @@ Sundaram, Sambhav Mishra, Aggimalla Abhishek, Nenavath Likhith Naik
 Dharwad, Karnataka, India  
 
 ---
-![Travel Planner Homepage](public/travel_home.png)
+![Travel Planner Homepage](public/front_page.png)
 
 ##  Project Overview
 
