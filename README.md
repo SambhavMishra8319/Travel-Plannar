@@ -186,3 +186,17 @@ Compared to traditional tools like **MakeMyTrip** or **Expedia**, which primaril
 By integrating modern web technologies with **generative AI**, the system bridges the gap between **research and real-world usability**, offering travelers a **personalized planning assistant** that adapts to their needs.  
 
 This project establishes a strong foundation for future work in **LLM-powered personalization**, **conversational travel agents**, and **AI-based decision-making systems**.
+
+## 📬 Contact Us
+
+For any queries, suggestions, or collaboration, feel free to reach out to our project team:
+
+| Name                     | Roll Number          | Email                                 |
+|--------------------------|-------------------|---------------------------------------|
+| Sundaram                 | 23BDS060          | 23bds060@iiitdwd.ac.in               |
+| Sambhav Mishra           | 23BDS050          | 23bds050@iiitdwd.ac.in               |
+| Aggimalla Abhishek       | 23BDS004          | 23bds004@iiitdwd.ac.in               |
+| Nenavath Likhith Naik    | 23BDS037          | 23bds037@iiitdwd.ac.in               |
+| Snehalatha S H           |      | snehalatha.24phddi12@iiitdwd.ac.in  |
+| Animesh Chaturvedi       |                  | animesh@iiitdwd.ac.in                |
+
