@@ -12,7 +12,9 @@ Dharwad, Karnataka, India
 
 
 ---
-
+ **Live Demo:** [Visit Our Website](https://travel-plannar-20.vercel.app/)
+---
+ **Demo Video:**[Demo Video](https://www.youtube.com/watch?v=SIn3rCM2TUw/)
 
 ##  Project Overview
 
